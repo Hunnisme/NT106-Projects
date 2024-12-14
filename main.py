@@ -458,7 +458,7 @@ def update_member_role():
     new_role = data.get('Role')  # Vai trò mới
 
     valid_roles = ['Owner', 'Admin', 'Member', 'Viewer']  # Các vai trò hợp lệ
-
+    
     # Validate input
     if not admin_id or not project_id or not identifier or not new_role:
         return jsonify({"error": "AdminID, ProjectID, Identifier, and Role are required!"}), 400
@@ -486,6 +486,13 @@ def update_member_role():
         members = project.get('Members', [])
         admin_role = next((member['Role'] for member in members if member['MemberID'] == ObjectId(admin_id)), None)
         target_member_role = next((member['Role'] for member in members if member['MemberID'] == ObjectId(member_id)), None)
+         # Kiểm tra quyền của Admin hoặc Creator
+        if project['CreatedBy'] == ObjectId(admin_id):
+            admin_role = "Creator"
+        else:
+            admin_in_project = next((member for member in project.get('Members', []) 
+                                    if member['MemberID'] == ObjectId(admin_id) and member['Role'] == 'Admin'), None)
+            admin_role = "Admin" if admin_in_project else None
 
         # Kiểm tra xem AdminID có quyền hay không
         if admin_role not in ['Admin', 'Owner','Creator']:
