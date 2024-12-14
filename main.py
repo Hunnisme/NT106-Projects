@@ -228,6 +228,47 @@ def view_project():
     }
     return jsonify(response), 200
 
+@app.route("/user_projects", methods=['GET'])
+def user_projects():
+    user_id = request.args.get('UserID')
+    
+    if not user_id:
+        return jsonify({"error": "UserID is required!"}), 400
+
+    if not ObjectId.is_valid(user_id):
+        return jsonify({"error": "Invalid UserID format!"}), 400
+
+    try:
+        # Lấy tất cả các dự án mà người dùng tạo ra hoặc tham gia
+        projects = list(projects_collection.find({
+            "$or": [
+                {"CreatedBy": ObjectId(user_id)},
+                {"Members.MemberID": ObjectId(user_id)}
+            ]
+        }))
+
+        if not projects:
+            return jsonify({"message": "No projects found for this user."}), 404
+
+        # Chuẩn bị dữ liệu trả về
+        result = []
+        for project in projects:
+            result.append({
+                "ProjectID": str(project['_id']),
+                "ProjectName": project['ProjectName'],
+                "Description": project['Description'],
+                "Status": project['Status'],
+                "StartDate": project['StartDate'],
+                "EndDate": project.get('EndDate', None),
+                "CreatedBy": str(project['CreatedBy']),
+                "CreateDate": project['CreateDate'].isoformat()
+            })
+
+        return jsonify({"projects": result}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 @app.route("/create_task", methods=['POST'])
 def create_task():
     data = request.get_json()
