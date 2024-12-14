@@ -454,22 +454,29 @@ def update_member_role():
     data = request.get_json()
     admin_id = data.get('AdminID')  # ID của người thực hiện thay đổi
     project_id = data.get('ProjectID')  # ID của dự án
-    member_id = data.get('MemberID')  # ID của thành viên cần thay đổi
+    identifier = data.get('Identifier')  # Username hoặc Email của thành viên cần thay đổi
     new_role = data.get('Role')  # Vai trò mới
 
     valid_roles = ['Owner', 'Admin', 'Member', 'Viewer']  # Các vai trò hợp lệ
 
     # Validate input
-    if not admin_id or not project_id or not member_id or not new_role:
-        return jsonify({"error": "AdminID, ProjectID, MemberID, and Role are required!"}), 400
+    if not admin_id or not project_id or not identifier or not new_role:
+        return jsonify({"error": "AdminID, ProjectID, Identifier, and Role are required!"}), 400
 
-    if not ObjectId.is_valid(admin_id) or not ObjectId.is_valid(project_id) or not ObjectId.is_valid(member_id):
+    if not ObjectId.is_valid(admin_id) or not ObjectId.is_valid(project_id):
         return jsonify({"error": "Invalid ID format!"}), 400
 
     if new_role not in valid_roles:
         return jsonify({"error": f"Invalid role. Allowed roles are: {', '.join(valid_roles)}"}), 400
 
     try:
+        # Tìm thành viên dựa trên Username hoặc Email
+        member = user_collection.find_one({"$or": [{"Username": identifier}, {"Email": identifier}]})
+        if not member:
+            return jsonify({"error": "Member not found with the provided Username or Email."}), 404
+
+        member_id = member['_id']  # Lấy MemberID từ kết quả truy vấn
+
         # Lấy thông tin dự án
         project = projects_collection.find_one({"_id": ObjectId(project_id)})
         if not project:
