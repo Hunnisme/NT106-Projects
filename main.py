@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.secret_key = "your_secret_key"  # Bắt buộc cho session hoạt động
 
 # MongoDB Connection
-client = MongoClient('localhost', 27017)
+client = MongoClient('192.168.1.16', 27017)
 db = client.DOAN_NT106  # Database
 user_collection = db.user  # User Collection
 projects_collection = db.project  # Project Collection
