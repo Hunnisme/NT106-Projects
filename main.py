@@ -488,11 +488,11 @@ def update_member_role():
         target_member_role = next((member['Role'] for member in members if member['MemberID'] == ObjectId(member_id)), None)
 
         # Kiểm tra xem AdminID có quyền hay không
-        if admin_role not in ['Admin', 'Owner']:
+        if admin_role not in ['Admin', 'Owner','Creator']:
             return jsonify({"error": "Only Admin or Creator can update member roles."}), 403
 
         # Creator (Owner) có quyền tối cao
-        if admin_role == 'Owner':
+        if admin_role == 'Owner'& admin_role=='Creator':
             # Creator có thể chỉnh sửa tất cả các role, bao gồm Admin
             pass
         elif admin_role == 'Admin':
