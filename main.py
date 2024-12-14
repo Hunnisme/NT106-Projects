@@ -292,9 +292,9 @@ def user_projects():
                     if member['MemberID'] == ObjectId(user_id):
                         user_role = member.get('Role', "Member")
                         break
-            
+
             # Xác định quyền nếu user là Admin
-            if user_role == "Creator" or user_role == "Admin":
+            if user_role == "Creator":
                 user_role = "Admin/Creator"  # Đánh dấu rõ quyền tương tự
 
             creator_name = creator_map.get(str(project['CreatedBy']), "Unknown")  # Default là "Unknown"
