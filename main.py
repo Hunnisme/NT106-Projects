@@ -127,7 +127,7 @@ def create_project():
         'CreatedBy': ObjectId(created_by),
         'CreateDate': create_date,
         'Members': [
-            {'MemberID': ObjectId(created_by), 'Role': 'Admin'}  # Thêm người tạo vào Members
+            {'MemberID': ObjectId(created_by), 'Role': 'Owner'}  # Thêm người tạo vào Members
         ]
     }
 
@@ -468,7 +468,7 @@ def update_member_role():
 
     if new_role not in valid_roles:
         return jsonify({"error": f"Invalid role. Allowed roles are: {', '.join(valid_roles)}"}), 400
-
+    
     try:
         # Tìm thành viên dựa trên Username hoặc Email
         member = user_collection.find_one({"$or": [{"Username": identifier}, {"Email": identifier}]})
@@ -509,7 +509,8 @@ def update_member_role():
             # Admin chỉ được phép chỉnh sửa các thành viên cấp dưới (Member, Viewer)
             if target_member_role == 'Admin':
                 return jsonify({"error": "Admin cannot change the role of another Admin."}), 403
-
+        if admin_role == 'Admin' and new_role == 'Owner':
+            return jsonify({"error": "Admin cannot change another role to Owner."}), 403
         # Cập nhật vai trò của thành viên
         result = projects_collection.update_one(
             {"_id": ObjectId(project_id), "Members.MemberID": ObjectId(member_id)},
