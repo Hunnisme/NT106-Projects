@@ -492,7 +492,7 @@ def update_member_role():
             return jsonify({"error": "Only Admin or Creator can update member roles."}), 403
 
         # Creator (Owner) có quyền tối cao
-        if admin_role == 'Owner'& admin_role=='Creator':
+        if admin_role == 'Owner' or admin_role=='Creator':
             # Creator có thể chỉnh sửa tất cả các role, bao gồm Admin
             pass
         elif admin_role == 'Admin':
