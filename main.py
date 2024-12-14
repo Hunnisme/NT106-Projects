@@ -214,29 +214,44 @@ def view_project():
         return jsonify({"error": "ProjectID and UserID are required!"}), 400
 
     if not ObjectId.is_valid(project_id) or not ObjectId.is_valid(user_id):
-        return jsonify({"error": "Invalid ID format."}), 400
+        return jsonify({"error": "Invalid ID format!"}), 400
 
     project = projects_collection.find_one({"_id": ObjectId(project_id)})
     if not project:
         return jsonify({"error": "Project not found."}), 404
 
+    # Check if the user is a member or creator of the project
     is_member = any(member['MemberID'] == ObjectId(user_id) for member in project.get('Members', []))
     if not is_member and str(project.get('CreatedBy')) != user_id:
         return jsonify({"error": "Access denied. You are not a member of this project."}), 403
 
+    # Get the creator's name
     creator = user_collection.find_one({"_id": ObjectId(project['CreatedBy'])})
     creator_name = creator.get('Name') if creator else "Unknown"
 
+    # Fetch tasks for the project
+    tasks = list(db.tasks.find({"ProjectID": ObjectId(project_id)}))
+    for task in tasks:
+        task['_id'] = str(task['_id'])
+        task['AssignedTo'] = str(task['AssignedTo'])
+        task['ProjectID'] = str(task['ProjectID'])
+        task['CreateDate'] = task['CreateDate'].isoformat()
+        if 'DueDate' in task:
+            task['DueDate'] = task['DueDate']
+
+    # Build the response
     response = {
         "ProjectName": project['ProjectName'],
         "Description": project['Description'],
         "StartDate": project['StartDate'],
-        "EndDate": project['EndDate'],
+        "EndDate": project.get('EndDate'),
         "Status": project['Status'],
         "CreatedBy": creator_name,
-        "CreateDate": project['CreateDate']
+        "CreateDate": project['CreateDate'].isoformat(),
+        "Tasks": tasks  # Include tasks in the project
     }
     return jsonify(response), 200
+
 
 @app.route("/user_projects", methods=['GET'])
 def user_projects():
