@@ -153,15 +153,21 @@ def add_project_members():
     if not ObjectId.is_valid(admin_id) or not ObjectId.is_valid(project_id):
         return jsonify({"error": "Invalid ID format."}), 400
 
-    # Kiểm tra quyền của admin
-    admin = user_collection.find_one({"_id": ObjectId(admin_id)})
-    if not admin or admin.get('role') != 'admin':
-        return jsonify({"error": "Only admin users can add project members."}), 403
-
     # Kiểm tra dự án tồn tại
     project = projects_collection.find_one({"_id": ObjectId(project_id)})
     if not project:
         return jsonify({"error": "Project not found."}), 404
+
+    # Kiểm tra quyền của Admin hoặc Creator
+    if project['CreatedBy'] == ObjectId(admin_id):
+        user_role = "Creator"
+    else:
+        admin_in_project = next((member for member in project.get('Members', []) 
+                                 if member['MemberID'] == ObjectId(admin_id) and member['Role'] == 'Admin'), None)
+        user_role = "Admin" if admin_in_project else None
+
+    if user_role not in ["Admin", "Creator"]:
+        return jsonify({"error": "Only Admin or Creator can add project members."}), 403
 
     # Lọc danh sách user từ identifiers
     users = user_collection.find({"$or": [{"Username": {"$in": identifiers}}, {"Email": {"$in": identifiers}}]})
@@ -196,6 +202,7 @@ def add_project_members():
         }), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 
 @app.route("/project", methods=['GET'])
