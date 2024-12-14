@@ -250,9 +250,23 @@ def user_projects():
         if not projects:
             return jsonify({"message": "No projects found for this user."}), 404
 
+        # Lấy danh sách UserID của những người tạo dự án
+        creator_ids = {project['CreatedBy'] for project in projects}
+        creators = user_collection.find({"_id": {"$in": list(creator_ids)}})
+        creator_map = {str(creator['_id']): creator['Name'] for creator in creators}
+
         # Chuẩn bị dữ liệu trả về
         result = []
         for project in projects:
+            # Tìm role của người dùng trong project (nếu họ là thành viên)
+            user_role = "Creator" if project['CreatedBy'] == ObjectId(user_id) else None
+            if not user_role:  # Nếu không phải creator, tìm role trong Members
+                for member in project.get('Members', []):
+                    if member['MemberID'] == ObjectId(user_id):
+                        user_role = member.get('Role', "Member")
+                        break
+            
+            creator_name = creator_map.get(str(project['CreatedBy']), "Unknown")  # Default là "Unknown"
             result.append({
                 "ProjectID": str(project['_id']),
                 "ProjectName": project['ProjectName'],
@@ -260,8 +274,9 @@ def user_projects():
                 "Status": project['Status'],
                 "StartDate": project['StartDate'],
                 "EndDate": project.get('EndDate', None),
-                "CreatedBy": str(project['CreatedBy']),
-                "CreateDate": project['CreateDate'].isoformat()
+                "CreatedBy": creator_name,  # Thay CreatedBy bằng tên
+                "CreateDate": project['CreateDate'].isoformat(),
+                "UserRole": user_role  # Thêm role của user trong project
             })
 
         return jsonify({"projects": result}), 200
