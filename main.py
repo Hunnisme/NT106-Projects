@@ -127,7 +127,7 @@ def create_project():
         'CreatedBy': ObjectId(created_by),
         'CreateDate': create_date,
         'Members': [
-            {'MemberID': ObjectId(created_by), 'Role': 'admin'}  # Thêm người tạo vào Members
+            {'MemberID': ObjectId(created_by), 'Role': 'Admin'}  # Thêm người tạo vào Members
         ]
     }
 
