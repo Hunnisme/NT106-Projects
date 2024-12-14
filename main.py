@@ -97,7 +97,7 @@ def create_project():
     start_date = data.get('StartDate')
     end_date = data.get('EndDate')
     status = data.get('Status')
-    created_by = data.get('CreatedBy')  # User ID of the creator
+    created_by = data.get('CreatedBy')  # User ID của người tạo
 
     # Validate required fields
     if not project_name or not description or not start_date or not status or not created_by:
@@ -126,7 +126,9 @@ def create_project():
         'Status': status,
         'CreatedBy': ObjectId(created_by),
         'CreateDate': create_date,
-        'Members': []  # Initialize empty members list
+        'Members': [  # Thêm người tạo vào danh sách thành viên với role Owner
+            {'MemberID': ObjectId(created_by), 'Role': 'Owner'}
+        ]
     }
 
     try:
@@ -134,6 +136,7 @@ def create_project():
         return jsonify({"message": "Project created successfully!", "project_id": str(result.inserted_id)}), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 
 @app.route("/project_members", methods=['POST'])
