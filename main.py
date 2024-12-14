@@ -261,14 +261,20 @@ def user_projects():
         # Chuẩn bị dữ liệu trả về
         result = []
         for project in projects:
-            # Tìm role của người dùng trong project (nếu họ là thành viên)
-            user_role = "Creator" if project['CreatedBy'] == ObjectId(user_id) else None
-            if not user_role:  # Nếu không phải creator, tìm role trong Members
+            # Tìm role của người dùng trong project
+            user_role = None
+            if project['CreatedBy'] == ObjectId(user_id):
+                user_role = "Creator"
+            else:  # Nếu không phải Creator, tìm role trong Members
                 for member in project.get('Members', []):
                     if member['MemberID'] == ObjectId(user_id):
                         user_role = member.get('Role', "Member")
                         break
             
+            # Xác định quyền nếu user là Admin
+            if user_role == "Creator" or user_role == "Admin":
+                user_role = "Admin/Creator"  # Đánh dấu rõ quyền tương tự
+
             creator_name = creator_map.get(str(project['CreatedBy']), "Unknown")  # Default là "Unknown"
             result.append({
                 "ProjectID": str(project['_id']),
@@ -285,7 +291,6 @@ def user_projects():
         return jsonify({"projects": result}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
 
 @app.route("/create_task", methods=['POST'])
 def create_task():
