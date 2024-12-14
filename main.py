@@ -313,6 +313,123 @@ def user_projects():
         return jsonify({"projects": result}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+@app.route("/update_member_role", methods=['PUT'])
+def update_member_role():
+    data = request.get_json()
+    admin_id = data.get('AdminID')  # ID của người thực hiện thay đổi
+    project_id = data.get('ProjectID')  # ID của dự án
+    identifier = data.get('Identifier')  # Username hoặc Email của thành viên cần thay đổi
+    new_role = data.get('Role')  # Vai trò mới
+
+    valid_roles = ['Owner', 'Admin', 'Member', 'Viewer']  # Các vai trò hợp lệ
+    
+    # Validate input
+    if not admin_id or not project_id or not identifier or not new_role:
+        return jsonify({"error": "AdminID, ProjectID, Identifier, and Role are required!"}), 400
+
+    if not ObjectId.is_valid(admin_id) or not ObjectId.is_valid(project_id):
+        return jsonify({"error": "Invalid ID format!"}), 400
+
+    if new_role not in valid_roles:
+        return jsonify({"error": f"Invalid role. Allowed roles are: {', '.join(valid_roles)}"}), 400
+    
+    try:
+        # Tìm thành viên dựa trên Username hoặc Email
+        member = user_collection.find_one({"$or": [{"Username": identifier}, {"Email": identifier}]})
+        if not member:
+            return jsonify({"error": "Member not found with the provided Username or Email."}), 404
+
+        member_id = member['_id']  # Lấy MemberID từ kết quả truy vấn
+
+        # Lấy thông tin dự án
+        project = projects_collection.find_one({"_id": ObjectId(project_id)})
+        if not project:
+            return jsonify({"error": "Project not found."}), 404
+
+        # Lấy danh sách members
+        members = project.get('Members', [])
+        admin_role = next((member['Role'] for member in members if member['MemberID'] == ObjectId(admin_id)), None)
+        target_member_role = next((member['Role'] for member in members if member['MemberID'] == ObjectId(member_id)), None)
+         # Kiểm tra quyền của Admin hoặc Creator
+        if project['CreatedBy'] == ObjectId(admin_id):
+            admin_role = "Creator"
+        else:
+            admin_in_project = next((member for member in project.get('Members', []) 
+                                    if member['MemberID'] == ObjectId(admin_id) and member['Role'] == 'Admin'), None)
+            admin_role = "Admin" if admin_in_project else None
+
+        # Kiểm tra xem AdminID có quyền hay không
+        if admin_role not in ['Admin', 'Owner','Creator']:
+            return jsonify({"error": "Only Admin or Creator can update member roles."}), 403
+
+        # Creator (Owner) có quyền tối cao
+        if admin_role == 'Owner' or admin_role=='Creator':
+            # Creator có thể chỉnh sửa tất cả các role, bao gồm Admin
+            pass
+        elif admin_role == 'Admin':
+            # Admin không thể chỉnh sửa hoặc xóa role của Creator
+            if target_member_role == 'Owner':
+                return jsonify({"error": "Admin cannot change or remove the role of the Creator (Owner)."}), 403
+            # Admin chỉ được phép chỉnh sửa các thành viên cấp dưới (Member, Viewer)
+            if target_member_role == 'Admin':
+                return jsonify({"error": "Admin cannot change the role of another Admin."}), 403
+        if admin_role == 'Admin' and new_role == 'Owner':
+            return jsonify({"error": "Admin cannot change another user's role to Owner."}), 403
+        # if admin_id==member_id:
+        #     return jsonify({"error": "Cannot change your own role."})
+        # Cập nhật vai trò của thành viên
+        result = projects_collection.update_one(
+            {"_id": ObjectId(project_id), "Members.MemberID": ObjectId(member_id)},
+            {"$set": {"Members.$.Role": new_role}}
+        )
+        if result.matched_count == 0:
+            return jsonify({"error": "Failed to update member role."}), 500
+
+        return jsonify({"message": "Member role updated successfully!"}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/deleteproject", methods=['DELETE'])
+def delete_project():
+    data = request.get_json()
+    admin_id = data.get('AdminID')  # ID of the user attempting to delete the project
+    project_id = data.get('ProjectID')  # ID of the project to delete
+
+    if not admin_id or not project_id:
+        return jsonify({"error": "AdminID and ProjectID are required!"}), 400
+
+    if not ObjectId.is_valid(admin_id) or not ObjectId.is_valid(project_id):
+        return jsonify({"error": "Invalid ID format!"}), 400
+
+    try:
+        # Fetch the project
+        project = projects_collection.find_one({"_id": ObjectId(project_id)})
+        if not project:
+            return jsonify({"error": "Project not found."}), 404
+
+        # Check if the admin_id is the creator of the project
+        if project['CreatedBy'] == ObjectId(admin_id):
+            user_role = "Creator"
+        else:
+            admin_in_project = next((member for member in project.get('Members', [])
+                                     if member['MemberID'] == ObjectId(admin_id) and member['Role'] == 'Owner'), None)
+            user_role = "Owner" if admin_in_project else None
+
+        if user_role not in ["Creator", "Owner"]:
+            return jsonify({"error": "Only the Creator or Owner can delete the project."}), 403
+
+        # Delete the project
+        result = projects_collection.delete_one({"_id": ObjectId(project_id)})
+        if result.deleted_count == 0:
+            return jsonify({"error": "Failed to delete project."}), 500
+
+        # Optionally, delete associated tasks
+        db.tasks.delete_many({"ProjectID": ObjectId(project_id)})
+
+        return jsonify({"message": "Project deleted successfully!"}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 
 @app.route("/create_task", methods=['POST'])
 def create_task():
@@ -449,79 +566,7 @@ def project_report():
         return jsonify({"error": str(e)}), 500
     
     
-@app.route("/update_member_role", methods=['PUT'])
-def update_member_role():
-    data = request.get_json()
-    admin_id = data.get('AdminID')  # ID của người thực hiện thay đổi
-    project_id = data.get('ProjectID')  # ID của dự án
-    identifier = data.get('Identifier')  # Username hoặc Email của thành viên cần thay đổi
-    new_role = data.get('Role')  # Vai trò mới
 
-    valid_roles = ['Owner', 'Admin', 'Member', 'Viewer']  # Các vai trò hợp lệ
-    
-    # Validate input
-    if not admin_id or not project_id or not identifier or not new_role:
-        return jsonify({"error": "AdminID, ProjectID, Identifier, and Role are required!"}), 400
-
-    if not ObjectId.is_valid(admin_id) or not ObjectId.is_valid(project_id):
-        return jsonify({"error": "Invalid ID format!"}), 400
-
-    if new_role not in valid_roles:
-        return jsonify({"error": f"Invalid role. Allowed roles are: {', '.join(valid_roles)}"}), 400
-    
-    try:
-        # Tìm thành viên dựa trên Username hoặc Email
-        member = user_collection.find_one({"$or": [{"Username": identifier}, {"Email": identifier}]})
-        if not member:
-            return jsonify({"error": "Member not found with the provided Username or Email."}), 404
-
-        member_id = member['_id']  # Lấy MemberID từ kết quả truy vấn
-
-        # Lấy thông tin dự án
-        project = projects_collection.find_one({"_id": ObjectId(project_id)})
-        if not project:
-            return jsonify({"error": "Project not found."}), 404
-
-        # Lấy danh sách members
-        members = project.get('Members', [])
-        admin_role = next((member['Role'] for member in members if member['MemberID'] == ObjectId(admin_id)), None)
-        target_member_role = next((member['Role'] for member in members if member['MemberID'] == ObjectId(member_id)), None)
-         # Kiểm tra quyền của Admin hoặc Creator
-        if project['CreatedBy'] == ObjectId(admin_id):
-            admin_role = "Creator"
-        else:
-            admin_in_project = next((member for member in project.get('Members', []) 
-                                    if member['MemberID'] == ObjectId(admin_id) and member['Role'] == 'Admin'), None)
-            admin_role = "Admin" if admin_in_project else None
-
-        # Kiểm tra xem AdminID có quyền hay không
-        if admin_role not in ['Admin', 'Owner','Creator']:
-            return jsonify({"error": "Only Admin or Creator can update member roles."}), 403
-
-        # Creator (Owner) có quyền tối cao
-        if admin_role == 'Owner' or admin_role=='Creator':
-            # Creator có thể chỉnh sửa tất cả các role, bao gồm Admin
-            pass
-        elif admin_role == 'Admin':
-            # Admin không thể chỉnh sửa hoặc xóa role của Creator
-            if target_member_role == 'Owner':
-                return jsonify({"error": "Admin cannot change or remove the role of the Creator (Owner)."}), 403
-            # Admin chỉ được phép chỉnh sửa các thành viên cấp dưới (Member, Viewer)
-            if target_member_role == 'Admin':
-                return jsonify({"error": "Admin cannot change the role of another Admin."}), 403
-        if admin_role == 'Admin' and new_role == 'Owner':
-            return jsonify({"error": "Admin cannot change another role to Owner."}), 403
-        # Cập nhật vai trò của thành viên
-        result = projects_collection.update_one(
-            {"_id": ObjectId(project_id), "Members.MemberID": ObjectId(member_id)},
-            {"$set": {"Members.$.Role": new_role}}
-        )
-        if result.matched_count == 0:
-            return jsonify({"error": "Failed to update member role."}), 500
-
-        return jsonify({"message": "Member role updated successfully!"}), 200
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
 
 
 
