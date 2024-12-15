@@ -685,9 +685,23 @@ def search_projects():
         for project in projects:
             project['_id'] = str(project['_id'])  # Convert ObjectId to string
             project['CreatedBy'] = str(project['CreatedBy'])  # Convert ObjectId to string
-            project['CreateDate'] = project['CreateDate'].isoformat()  # Convert datetime to string
-            if 'EndDate' in project and project['EndDate']:
-                project['EndDate'] = project['EndDate'].isoformat()
+            
+            # Handle CreateDate
+            if isinstance(project['CreateDate'], datetime):  # Check if datetime object
+                project['CreateDate'] = project['CreateDate'].isoformat()  # Convert to ISO 8601 string
+            elif isinstance(project['CreateDate'], str):  # If already a string
+                project['CreateDate'] = project['CreateDate']  # Use as-is
+            else:
+                project['CreateDate'] = None  # Default to None if unexpected format
+
+            # Handle EndDate (if present)
+            if 'EndDate' in project:
+                if isinstance(project['EndDate'], datetime):  # Check if datetime object
+                    project['EndDate'] = project['EndDate'].isoformat()
+                elif isinstance(project['EndDate'], str):  # If already a string
+                    project['EndDate'] = project['EndDate']
+                else:
+                    project['EndDate'] = None  # Default to None if unexpected format
 
         return jsonify({
             "total_projects": total_projects,
@@ -698,7 +712,6 @@ def search_projects():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
 
 
 if __name__ == "__main__":
