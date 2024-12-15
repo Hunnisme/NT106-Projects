@@ -643,6 +643,9 @@ def search_projects():
     if not ObjectId.is_valid(user_id):
         return jsonify({"error": "Invalid UserID format!"}), 400
 
+    # Convert user_id to ObjectId
+    user_id = ObjectId(user_id)
+
     # Validate page and page size
     if page <= 0 or page_size <= 0:
         return jsonify({"error": "Page and PageSize must be positive integers!"}), 400
@@ -651,8 +654,8 @@ def search_projects():
         # Build query
         query = {
             "$or": [
-                {"Members.MemberID": ObjectId(user_id)},
-                {"CreatedBy": ObjectId(user_id)}
+                {"Members.MemberID": user_id},
+                {"CreatedBy": user_id}
             ]
         }
 
@@ -684,7 +687,7 @@ def search_projects():
             project['CreatedBy'] = str(project['CreatedBy'])  # Convert ObjectId to string
             project['CreateDate'] = project['CreateDate'].isoformat()  # Convert datetime to string
             if 'EndDate' in project and project['EndDate']:
-                project['EndDate'] = project['EndDate']  # Ensure all date fields are handled
+                project['EndDate'] = project['EndDate'].isoformat()
 
         return jsonify({
             "total_projects": total_projects,
