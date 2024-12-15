@@ -430,6 +430,7 @@ def delete_project():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+# -----------------------------TASK----------------------------------------
 
 @app.route("/create_task", methods=['POST'])
 def create_task():
@@ -679,9 +680,11 @@ def search_projects():
 
         # Format output
         for project in projects:
-            project['_id'] = str(project['_id'])
-            project['CreatedBy'] = str(project['CreatedBy'])
-            project['CreateDate'] = project['CreateDate'].isoformat()
+            project['_id'] = str(project['_id'])  # Convert ObjectId to string
+            project['CreatedBy'] = str(project['CreatedBy'])  # Convert ObjectId to string
+            project['CreateDate'] = project['CreateDate'].isoformat()  # Convert datetime to string
+            if 'EndDate' in project and project['EndDate']:
+                project['EndDate'] = project['EndDate']  # Ensure all date fields are handled
 
         return jsonify({
             "total_projects": total_projects,
@@ -692,6 +695,7 @@ def search_projects():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 
 if __name__ == "__main__":
