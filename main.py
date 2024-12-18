@@ -4,6 +4,15 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from bson import ObjectId
 from datetime import datetime
 import re
+import json
+
+class JSONEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, ObjectId):
+            return str(obj)
+        if isinstance(obj, datetime):
+            return obj.isoformat()  # Convert datetime to ISO format
+        return super(JSONEncoder, self).default(obj)
 
 app = Flask(__name__)
 app.secret_key = "your_secret_key"  # Bắt buộc cho session hoạt động
@@ -229,6 +238,16 @@ def view_project():
     creator = user_collection.find_one({"_id": ObjectId(project['CreatedBy'])})
     creator_name = creator.get('Name') if creator else "Unknown"
 
+    # Fetch members' details
+    members = []
+    for member in project.get('Members', []):
+        user = user_collection.find_one({"_id": ObjectId(member['MemberID'])})
+        members.append({
+            "MemberID": str(member['MemberID']),
+            "Name": user.get('Name', "Unknown") if user else "Unknown",
+            "Role": member['Role']
+        })
+
     # Fetch tasks for the project
     tasks = list(db.tasks.find({"ProjectID": ObjectId(project_id)}))
     for task in tasks:
@@ -248,9 +267,11 @@ def view_project():
         "Status": project['Status'],
         "CreatedBy": creator_name,
         "CreateDate": project['CreateDate'].isoformat(),
-        "Tasks": tasks  # Include tasks in the project
+        "Tasks": tasks,  # Include tasks in the project
+        "Members": members  # Include members with roles
     }
     return jsonify(response), 200
+
 
 
 @app.route("/user_projects", methods=['GET'])
@@ -626,92 +647,69 @@ def progress_report():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+# app.json_encoder = JSONEncoder 
+# @app.route("/search_projects", methods=['GET'])
+# def search_user_projects():
+#     # Query parameters
+#     user_id = request.args.get('UserID')  # User ID to filter projects
+#     query = request.args.get('query', '').strip()  # Search query
+#     status = request.args.get('status')  # Filter by status
+#     start_date = request.args.get('start_date')  # Filter by start date (YYYY-MM-DD)
+#     end_date = request.args.get('end_date')  # Filter by end date (YYYY-MM-DD)
+#     page = int(request.args.get('page', 1))  # Pagination: page number
+#     page_size = int(request.args.get('page_size', 10))  # Pagination: number of results per page
 
-@app.route("/search_projects", methods=['GET'])
-def search_projects():
-    user_id = request.args.get('UserID')
-    search_keyword = request.args.get('SearchKeyword', '').strip()
-    status = request.args.get('Status', '').strip()
-    start_date = request.args.get('StartDate', '').strip()
-    end_date = request.args.get('EndDate', '').strip()
-    page = int(request.args.get('Page', 1))
-    page_size = int(request.args.get('PageSize', 10))
+#     if not user_id:
+#         return jsonify({"error": "UserID is required!"}), 400
 
-    if not user_id:
-        return jsonify({"error": "UserID is required!"}), 400
+#     if page < 1 or page_size < 1:
+#         return jsonify({"error": "Page and page_size must be greater than 0!"}), 400
 
-    if not ObjectId.is_valid(user_id):
-        return jsonify({"error": "Invalid UserID format!"}), 400
+#     if not ObjectId.is_valid(user_id):
+#         return jsonify({"error": "Invalid UserID format!"}), 400
 
-    # Convert user_id to ObjectId
-    user_id = ObjectId(user_id)
+#     try:
+#         # Base filters to find projects associated with the user
+#         filters = {
+#             "$or": [
+#                 {"CreatedBy": ObjectId(user_id)},
+#                 {"Members.MemberID": ObjectId(user_id)}
+#             ]
+#         }
 
-    # Validate page and page size
-    if page <= 0 or page_size <= 0:
-        return jsonify({"error": "Page and PageSize must be positive integers!"}), 400
+#         # Additional filters based on query parameters
+#         if query:
+#             filters["$or"] = filters["$or"] + [
+#                 {"ProjectName": {"$regex": query, "$options": "i"}},
+#                 {"Description": {"$regex": query, "$options": "i"}}
+#             ]
+#         if status:
+#             filters["Status"] = status
+#         if start_date:
+#             filters["StartDate"] = {"$gte": start_date}
+#         if end_date:
+#             filters["EndDate"] = {"$lte": end_date}
 
-    try:
-        # Build query
-        query = {
-            "$or": [
-                {"Members.MemberID": user_id},
-                {"CreatedBy": user_id}
-            ]
-        }
+#         # Pagination logic
+#         skip = (page - 1) * page_size
+#         total_projects = projects_collection.count_documents(filters)  # Total matching projects
 
-        if search_keyword:
-            query["ProjectName"] = {"$regex": search_keyword, "$options": "i"}  # Case-insensitive search
+#         # Fetch filtered and paginated projects
+#         projects = list(projects_collection.find(filters)
+#                         .skip(skip)
+#                         .limit(page_size)
+#                         .sort("CreateDate", -1))  # Sort by CreateDate descending
 
-        if status:
-            query["Status"] = status
+#         response = {
+#             "total_projects": total_projects,
+#             "page": page,
+#             "page_size": page_size,
+#             "projects": projects
+#         }
 
-        if start_date or end_date:
-            date_query = {}
-            if start_date:
-                date_query["$gte"] = datetime.strptime(start_date, "%Y-%m-%d")
-            if end_date:
-                date_query["$lte"] = datetime.strptime(end_date, "%Y-%m-%d")
-            query["CreateDate"] = date_query
-
-        # Count total projects
-        total_projects = projects_collection.count_documents(query)
-
-        # Apply pagination
-        projects = list(projects_collection.find(query)
-                        .skip((page - 1) * page_size)
-                        .limit(page_size))
-
-        # Format output
-        for project in projects:
-            project['_id'] = str(project['_id'])  # Convert ObjectId to string
-            project['CreatedBy'] = str(project['CreatedBy'])  # Convert ObjectId to string
-            
-            # Handle CreateDate
-            if isinstance(project['CreateDate'], datetime):  # Check if datetime object
-                project['CreateDate'] = project['CreateDate'].isoformat()  # Convert to ISO 8601 string
-            elif isinstance(project['CreateDate'], str):  # If already a string
-                project['CreateDate'] = project['CreateDate']  # Use as-is
-            else:
-                project['CreateDate'] = None  # Default to None if unexpected format
-
-            # Handle EndDate (if present)
-            if 'EndDate' in project:
-                if isinstance(project['EndDate'], datetime):  # Check if datetime object
-                    project['EndDate'] = project['EndDate'].isoformat()
-                elif isinstance(project['EndDate'], str):  # If already a string
-                    project['EndDate'] = project['EndDate']
-                else:
-                    project['EndDate'] = None  # Default to None if unexpected format
-
-        return jsonify({
-            "total_projects": total_projects,
-            "page": page,
-            "page_size": page_size,
-            "projects": projects
-        }), 200
-
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+#         return jsonify(response), 200
+#     except Exception as e:
+#         return jsonify({"error": str(e)}), 500
 
 
 if __name__ == "__main__":
