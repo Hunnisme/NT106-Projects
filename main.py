@@ -592,7 +592,7 @@ def project_report():
 
 
 
-@app.route("/progress_report", methods=['GET'])
+@app.route("/task_progress_report", methods=['GET'])
 def progress_report():
     user_id = request.args.get('UserID')
 
