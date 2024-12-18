@@ -5,18 +5,23 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const path = require('path');
 const { check, validationResult } = require('express-validator'); // Import express-validator
+const MongoStore = require('connect-mongo');
 
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(session({
-    secret: 'z]Q>#{p%-QDhm5fbY@|kf$)V(~bc*b',
-    resave: false,
-    saveUninitialized: true,
+    secret: 'z]Q>#{p%-QDhm5fbY@|kf$)V(~bc*b', // Secret dùng để mã hóa session
+    resave: false, // Không lưu lại session nếu không thay đổi
+    saveUninitialized: true, // Lưu session mới ngay cả khi không chỉnh sửa
+    store: MongoStore.create({
+        mongoUrl: 'mongodb://192.168.1.16:27017/DOAN_NT106', // URL MongoDB
+        collectionName: 'sessions' // Tên collection lưu session
+    }),
     cookie: {
-        secure: process.env.NODE_ENV === 'production',
-        httpOnly: true
+        secure: process.env.NODE_ENV === 'production', // Chỉ hoạt động trên HTTPS ở production
+        httpOnly: true // Bảo vệ chống tấn công XSS
     }
 }));
 
@@ -131,13 +136,14 @@ app.post('/login', async (req, res) => {
     }
 
     try {
-        // Tìm người dùng trong cơ sở dữ liệu
+        // Tìm người dùng trong cơ sở dữ liệu (dựa vào Username hoặc Email)
         const user = await userCollection.findOne({
             $or: [{ Username: Identifier }, { Email: Identifier }]
         });
 
+        // Kiểm tra thông tin người dùng và mật khẩu
         if (user && await bcrypt.compare(Password, user.Password)) {
-            // Thiết lập session
+            // Lưu thông tin vào session
             req.session.user_id = user._id.toString();
             req.session.username = user.Username;
 
@@ -154,6 +160,32 @@ app.post('/login', async (req, res) => {
         return res.status(500).json({ error: "Internal server error" });
     }
 });
+
+// Endpoint kiểm tra trạng thái đăng nhập
+app.get('/check-login', (req, res) => {
+    if (req.session && req.session.user_id) {
+        return res.status(200).json({
+            message: "User is logged in.",
+            username: req.session.username,
+            user_id: req.session.user_id,
+        });
+    } else {
+        return res.status(401).json({ error: "User is not logged in." });
+    }
+});
+
+// Endpoint đăng xuất
+app.post('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.error("Error destroying session:", err);
+            return res.status(500).json({ error: "Failed to log out." });
+        }
+        res.clearCookie('connect.sid'); // Xóa cookie phiên
+        res.status(200).json({ message: "Logged out successfully." });
+    });
+});
+
 
 
 // ------------------------------------PROJECT------------------------------------------
@@ -996,5 +1028,5 @@ app.get('/list_tasks', async (req, res) => {
 
 const PORT = 3000;
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server đang chạy tại http://192.168.1.16:${PORT}`);
+    console.log(`Server đang chạy tại http://0.0.0.0:${PORT}`);
 });
