@@ -185,7 +185,7 @@ app.post('/logout', (req, res) => {
         res.status(200).json({ message: "Logged out successfully." });
     });
 });
-app.get('/protected-api', (req, res) => {
+app.get('/session', (req, res) => {
     if (req.session && req.session.user_id) {
         res.json({ message: "Access granted!", user_id: req.session.user_id, username: req.session.username });
     } else {
