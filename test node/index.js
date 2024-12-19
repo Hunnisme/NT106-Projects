@@ -199,7 +199,7 @@ app.get('/session', (req, res) => {
 // const { ObjectId } = require('mongodb');
 
 app.post('/createproject', async (req, res) => {
-    const { ProjectName, Description, StartDate, EndDate, Status, CreatedBy } = req.body;
+    const { ProjectName, Description, StartDate, EndDate, Status, CreatedBy, Members } = req.body;
 
     // Validate required fields
     if (!ProjectName || !Description || !StartDate || !Status || !CreatedBy) {
@@ -226,6 +226,41 @@ app.post('/createproject', async (req, res) => {
             return res.status(404).json({ error: "Creator not found." });
         }
 
+        // Resolve InitialMembers to user IDs
+        let members = [];
+        if (Array.isArray(Members ) && Members .length > 0) {
+            const users = await userCollection.find({
+                $or: [
+                    { Username: { $in: Members  } },
+                    { Email: { $in: Members  } }
+                ]
+            }).toArray();
+
+            const userIds = users.map(user => ({
+                MemberID: user._id,
+                Role: 'Member'
+            }));
+
+            // Identify invalid members (not found in the database)
+            const invalidMembers = InitialMembers.filter(
+                identifier => !users.some(user =>
+                    user.Username === identifier || user.Email === identifier
+                )
+            );
+
+            if (invalidMembers.length > 0) {
+                return res.status(400).json({
+                    error: "Some InitialMembers are invalid.",
+                    invalidMembers
+                });
+            }
+
+            members = userIds;
+        }
+
+        // Add creator as a member with role 'Owner'
+        members.push({ MemberID: new ObjectId(CreatedBy), Role: 'Owner' });
+
         // Create the project
         const createDate = new Date();
         const project = {
@@ -236,9 +271,7 @@ app.post('/createproject', async (req, res) => {
             Status,
             CreatedBy: new ObjectId(CreatedBy),
             CreateDate: createDate,
-            Members: [
-                { MemberID: new ObjectId(CreatedBy), Role: 'Owner' } // Add creator as a member
-            ]
+            Members: members
         };
 
         const result = await projectsCollection.insertOne(project);
@@ -252,6 +285,7 @@ app.post('/createproject', async (req, res) => {
         return res.status(500).json({ error: "Internal server error" });
     }
 });
+
 
 app.post('/project_members', async (req, res) => {
     const { AdminID, ProjectID, Identifiers, Role } = req.body;
