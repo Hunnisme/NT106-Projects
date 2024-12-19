@@ -214,7 +214,16 @@ app.post('/createproject', async (req, res) => {
         });
     }
 
+    // Validate date formats and logical order
+    if (isNaN(new Date(StartDate)) || (EndDate && isNaN(new Date(EndDate)))) {
+        return res.status(400).json({ error: "Invalid date format." });
+    }
+    if (EndDate && new Date(StartDate) > new Date(EndDate)) {
+        return res.status(400).json({ error: "StartDate cannot be after EndDate." });
+    }
+
     // Validate creator ID
+    const { ObjectId } = require('mongodb');
     if (!ObjectId.isValid(CreatedBy)) {
         return res.status(400).json({ error: "Invalid creator ID." });
     }
@@ -226,13 +235,13 @@ app.post('/createproject', async (req, res) => {
             return res.status(404).json({ error: "Creator not found." });
         }
 
-        // Resolve InitialMembers to user IDs
+        // Resolve Members to user IDs
         let members = [];
-        if (Array.isArray(Members ) && Members .length > 0) {
+        if (Array.isArray(Members) && Members.length > 0) {
             const users = await userCollection.find({
                 $or: [
-                    { Username: { $in: Members  } },
-                    { Email: { $in: Members  } }
+                    { Username: { $in: Members } },
+                    { Email: { $in: Members } }
                 ]
             }).toArray();
 
@@ -241,8 +250,7 @@ app.post('/createproject', async (req, res) => {
                 Role: 'Member'
             }));
 
-            // Identify invalid members (not found in the database)
-            const invalidMembers = InitialMembers.filter(
+            const invalidMembers = Members.filter(
                 identifier => !users.some(user =>
                     user.Username === identifier || user.Email === identifier
                 )
@@ -250,7 +258,7 @@ app.post('/createproject', async (req, res) => {
 
             if (invalidMembers.length > 0) {
                 return res.status(400).json({
-                    error: "Some InitialMembers are invalid.",
+                    error: "Some Members are invalid.",
                     invalidMembers
                 });
             }
@@ -281,10 +289,11 @@ app.post('/createproject', async (req, res) => {
             project_id: result.insertedId.toString()
         });
     } catch (err) {
-        console.error(err);
+        console.error("Error creating project:", err);
         return res.status(500).json({ error: "Internal server error" });
     }
 });
+
 
 
 app.post('/project_members', async (req, res) => {
