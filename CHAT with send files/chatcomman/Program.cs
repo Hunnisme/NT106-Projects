@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -11,7 +12,9 @@ class Client
 
     static void Main(string[] args)
     {
-        string serverAddress = "127.0.0.1"; // Địa chỉ IP server
+        IPAddress[] addresses = Dns.GetHostAddresses("chat.hunn.io.vn");
+        string serverAddress = string.Join(", ", Array.ConvertAll(addresses, ip => ip.ToString()));
+        //string serverAddress = "127.0.0.1";
         int port = 8080;
 
         tcpClient = new TcpClient(serverAddress, port);
