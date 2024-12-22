@@ -67,3 +67,27 @@ D:\CHAT\chatcomman\obj\Debug\net8.0\refint\chatcomman.dll
 D:\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.pdb
 D:\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.genruntimeconfig.cache
 D:\CHAT\chatcomman\obj\Debug\net8.0\ref\chatcomman.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\chatcomman.exe
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\chatcomman.deps.json
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\chatcomman.runtimeconfig.json
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\chatcomman.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\chatcomman.pdb
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\DnsClient.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\MongoDB.Bson.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\MongoDB.Driver.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\SharpCompress.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\Snappier.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\ZstdSharp.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.csproj.AssemblyReference.cache
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.GeneratedMSBuildEditorConfig.editorconfig
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.AssemblyInfoInputs.cache
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.AssemblyInfo.cs
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.csproj.CoreCompileInputs.cache
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.sourcelink.json
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.csproj.Up2Date
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\refint\chatcomman.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.pdb
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.genruntimeconfig.cache
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\ref\chatcomman.dll

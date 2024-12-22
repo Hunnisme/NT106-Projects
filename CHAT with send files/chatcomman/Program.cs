@@ -236,44 +236,46 @@ class Client
     // Mã hóa dữ liệu trước khi gửi
     private static byte[] EncryptData(byte[] data, int length)
     {
-        try
-        {
-            byte[] keyBytes = Encoding.UTF8.GetBytes(roomCode); // Mã hóa dựa trên mã phòng
-            byte[] encryptedBytes = new byte[length];
+        return data;
+        //try
+        //{
+        //    byte[] keyBytes = Encoding.UTF8.GetBytes(roomCode); // Mã hóa dựa trên mã phòng
+        //    byte[] encryptedBytes = new byte[length];
 
-            for (int i = 0; i < length; i++)
-            {
-                encryptedBytes[i] = (byte)(data[i] ^ keyBytes[i % keyBytes.Length]); // XOR encryption
-            }
+        //    for (int i = 0; i < length; i++)
+        //    {
+        //        encryptedBytes[i] = (byte)(data[i] ^ keyBytes[i % keyBytes.Length]); // XOR encryption
+        //    }
 
-            return encryptedBytes;
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error encrypting data: {ex.Message}");
-            return null;
-        }
+        //    return encryptedBytes;
+        //}
+        //catch (Exception ex)
+        //{
+        //    Console.WriteLine($"Error encrypting data: {ex.Message}");
+        //    return null;
+        //}
     }
 
     // Giải mã dữ liệu khi nhận
     private static byte[] DecryptData(byte[] data, int length)
     {
-        try
-        {
-            byte[] keyBytes = Encoding.UTF8.GetBytes(roomCode); // Giải mã dựa trên mã phòng
-            byte[] decryptedBytes = new byte[length];
+        return data;
+        //try
+        //{
+        //    byte[] keyBytes = Encoding.UTF8.GetBytes(roomCode); // Giải mã dựa trên mã phòng
+        //    byte[] decryptedBytes = new byte[length];
 
-            for (int i = 0; i < length; i++)
-            {
-                decryptedBytes[i] = (byte)(data[i] ^ keyBytes[i % keyBytes.Length]); // XOR decryption
-            }
+        //    for (int i = 0; i < length; i++)
+        //    {
+        //        decryptedBytes[i] = (byte)(data[i] ^ keyBytes[i % keyBytes.Length]); // XOR decryption
+        //    }
 
-            return decryptedBytes;
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error decrypting data: {ex.Message}");
-            return null;
-        }
+        //    return decryptedBytes;
+        //}
+        //catch (Exception ex)
+        //{
+        //    Console.WriteLine($"Error decrypting data: {ex.Message}");
+        //    return null;
+        //}
     }
 }

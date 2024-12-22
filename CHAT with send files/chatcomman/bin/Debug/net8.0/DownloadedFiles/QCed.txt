@@ -1,0 +1,438 @@
+﻿# Exported by Aegisub 9820-cibuilds-8165f1ad5
+OS: TỰ GIỚI THIỆU
+OS: HIGASA SEIU\NSINH NGÀY 3 THÁNG 5\N18 TUỔI\NCAO 165CM
+NTP: Higasa Seiu, vị trí tiền phong phụ.\NLối chơi ưa thích cướp bóng.
+OS: SHOUNOU MITONO\NSINH NGÀY 9 THÁNG 4\N18 TUỔI\NCAO 170CM
+NTP: Shounou Mitono, vị trí hậu vệ dẫn bóng.\NLối chơi ưa thích kèm đôi.
+OS: MAYOKO REIKA\NSINH NGÀY 1 THÁNG 12\N17 TUỔI\NCAO 169CM
+NTP: Mayoko Reika, vị trí hậu vệ ghi điểm.\NLối chơi ưa thích chạy và ném.
+OS: UMIKAWA NIKAWA\NSINH NGÀY 18 THÁNG 12\N17 TUỔI\NCAO 164CM
+NTP: Umikawa Nikawa, vị trí tiền vệ.\NLối chơi ưa thích ghi điểm trên không.
+OS: SILVIA SEVERE\NSINH NGÀY 19 THÁNG 9\N17 TUỔI\NCAO 185CM
+NTP: Silvia Severe, vị trí trung phong.\NLối chơi ưa thích chặn bóng.
+OS: OHKI SEIKO\NSINH NGÀY 1 THÁNG 8\N17 TUỔI\NCAO 180CM
+NTP: Ohki Seiko, vị trí dự bị & người thứ 6.\NLối chơi ưa thích cổ vũ.
+OS: CỰU HỌC SINH VS TIỀN BỐI
+NTP: Kanbaru Suruga, nô lệ tình dục của tiền bối Araragi. Lối chơi ưa thích...
+OS: KANBARU SURUGA\NSINH NGÀY 9 THÁNG 5\N18 TUỔI\NCAO 160CM
+NTP: Sống chết mặc bay!
+NTP: Về năm thành viên mà hiện tại đang mất tích ấy...
+NTP: Năm người này họ có điểm chung gì không?
+NTP: Không có điểm chung đâu anh.
+NTP: Có khi còn chưa chơi cùng nhau trận nào cả.
+NTP: Nghĩa là rất khó để khiến năm người thành một đội.
+NTP: Vậy thì, nếu còn bốn người thôi thì sao?
+NTP: Điểm chung cho bốn đứa...
+NTP: Điện thoại chăng?
+NTP: À, không. Có khi nào lại là... \NNếu như vậy thì hẳn... Có khả năng sẽ là...
+NTP: Không phải là tìm điểm chung\Ngiữa năm người họ.
+NTP: Hay cho rằng họ là đồng minh của nhau.
+OS: CÂU 5: HÃY TÌM MỘT NGƯỜI LỆCH SÓNG
+NTP: Giả sử như đây là câu hỏi trong bộ môn Quốc Ngữ
+: Tìm ra người khác biệt trong số năm người này thì sao nhỉ?
+NTP: Là sai lệch. Phải tìm ra điểm sai lệch.
+NTP: Nó hệt như việc một sinh viên đại học \Nnăm nhất lại bày đặt tham gia tiệc đồ ngủ
+:  của nhóm nữ sinh cao trung vậy.
+NTP: Một sự khác biệt đến mức lạc lõng.
+OS: CÂU 5: HÃY TÌM MỘT NGƯỜI LỆCH SÓNG
+NTP: À, hiểu rồi. Hóa ra là vậy
+OS: "CHO ANH MƯỢN NHÀ MỘT ĐÊM."
+NTP: Mình nhớ về điều mình hỏi Kanbaru...
+OS: "ĐIỆN THOẠI DI ĐỘNG À."
+NTP: và cuộc trò chuyện cùng với Meniko.
+OS: BẤT CỨ KẺ NÀO NHÌN VÀO VỰC THẲM\NCŨNG SẼ BỊ VỰC THẲM NHÌN LẠI
+NTP: Thông tin điều tra của chúng ta đã bị lộ theo cách đó à.
+NTP: Nếu đúng là vậy, thì nơi mình cần có mặt 
+NTP: không phải là nơi này.
+OS: SHINOBUMONOGATARI
+NTP: SHINOBU MÙ TẠT
+OS: CHUYÊN MỤC PHÁT SÓNG SỐ 6 MÙA QUÁI VẬT
+OS: SHINOBUMONOGATARI TẬP 1\NSHINOBU MÙ TẠT - PHẦN 6
+NTP: Này, này.
+NTP: Không phải đằng kia đâu. Đằng này này.
+NTP: Lâu lắm rồi không gặp cô nữ sinh cao trung.
+NTP: Dường như ngươi vẫn ổn,\Nnên bổn vương thấy vui lắm.
+NTP: Phía ngài xem ra cũng bình an vô sự nhỉ.
+NTP: Tưởng tôi đã chôn cất ngài tử tế rồi cơ mà.
+NTP: Ừ.
+NTP: Xem ra bổn đại vương ta lại chết thêm lần nữa rồi.
+NTP: Vì bổn vương đã uống phải máu,\Nà không, là chất độc từ ngươi chứ.
+NTP: Đừng có mà đổ lỗi cho tôi.
+NTP: Là ngài tự chết cơ mà?
+NTP: Tôi chỉ chôn cất ngài mà thôi.
+NTP: Đâu chỉ có mỗi chôn thôi đâu.
+NTP: Đã thế sau đó còn tự ý sử dụng tên bổn vương\Nđể làm bừa bãi theo ý mình còn gì nữa?
+NTP: Dù nói rằng làm vậy chỉ để đánh lạc hướng điều tra,
+NTP: nhưng tôi cũng thấy mình có lỗi khi đã tự tiện dùng tên ngài.
+NTP: Thế nhưng, cái lúc mà tôi chôn cất \Nngài trên núi, thì tôi chẳng hề có ác ý hay gì cả.
+NTP: Thế tại sao phải mang đến tận ngọn núi đó mà chôn vậy?
+NTP: Đằng nào cũng phải chôn thì
+NTP: tôi nghĩ nếu chôn gần đền miếu dù sao cũng sẽ được hưởng chút hương hoả.
+NTP: Nhân tiện thì người đầu tiên phát hiện ra thi thể của bổn vương đã giữ ý mà tránh đi rồi.
+NTP: Tức là ngài đang có chuyện gì\Ncần nói với tôi sao, Suicide-Master?
+NTP: Kẻ mang dòng máu của người vừa \Nlạnh lùng vừa mạnh mẽ như bổn vương
+: lại khệnh khạng trên đường đêm \Nvới cái lý do rởm đời như là phục thù.
+NTP: Vì muốn làm vậy nên ngươi mới \Nmuốn trở thành ma cà rồng sao?
+NTP: Mới muốn để cho bổn vương ăn ngươi sao?
+NTP: À, về phần đó thì bổn vương chưa\N kể cho những kẻ đang truy đuổi người đâu.
+NTP: Cũng chẳng định bao che hay gì
+NTP: nhưng bổn vương đã nói rằng
+: ta đã hút máu ngươi chỉ là vì để \Nkhoe mẽ trước mặt bằng hữu cũ mà thôi.
+NTP: Dù thế nào đi nữa,
+NTP: lúc đó bổn vương chỉ định hỏi đường thôi
+NTP: thì ngươi đã đột ngột quỳ mọp xuống
+: mà khẩn cầu rằng "Xin hãy biến tôi thành ma cà rồng"
+NTP: chuyện đó thì ta chưa nói ra đâu.
+NTP: Ai mà ngờ chính bổn vương lại \Nbiến thành xác ướp chứ, thực là ngoài dự đoán.
+NTP: Xem ra kể cả có sống đến ngàn tuổi thì vẫn có những điều ngoài dự liệu.
+NTP: Bộ những người như tôi hiếm lắm hay sao?
+NTP: Những ai khờ dại đến mức tự mình \Ncầu xin trở thành ma cà rồng ấy.
+NTP: Cũng không hiếm đến vậy,\N 600 năm trước từng có một người đấy.
+NTP: Nhớ được ra chuyện đó, xem ra bổn đại vương ta cũng trở nên đa sầu đa cảm rồi chăng?
+OS: VẾT THƯƠNG
+NTP: Đa sầu đa cảm?
+NTP: Quyến thuộc trước đây của Cựu Heart-under-blade
+NTP: dường như rất quan tâm và\N cứ làm ầm lên về vấn đề ăn uống.
+NTP: Nhưng nếu để bổn vương nhận xét thì, \Nphần quan điểm quan trọng nhất lại bị thiếu sót.
+NTP: Ăn và bị ăn.
+: Nó chỉ nhìn nhận vấn đề dưới quan điểm của người gia hại với người bị hại.
+NTP: Giả định của nó không tính đến trường hợp kẻ bị ăn thịt lại muốn mình bị ăn thịt.
+NTP: Một loài động vật tự nguyện muốn bị ăn thịt...
+OS: CHỈ CÓ KẺ NHƯ TÔI MÀ THÔI.
+NTP: tôi không nghĩ là có tồn tại đâu.
+NTP: Không đâu.
+OS: CHỈ CÓ KẺ NHƯ CHÚNG TA MÀ THÔI.
+NTP: Cứ cho là có thì sinh vật tự nguyện bị ăn thịt mà có thể tồn tại được sao?
+NTP: Bổn vương đã nói là có rồi mà.
+: 600 trước từng có một sinh vật, một con người như vậy.
+NTP: Một nàng công chúa như vậy.
+NTP: Cô ta muốn trở thành ma cà rồng với một lý tưởng cao thượng
+NTP: là điều một kẻ mạnh mẽ và lạnh lùng \Nnhư bổn vương chẳng tài nào hiểu nổi.
+NTP: Không như ngươi, cô ta cực kỳ có ích luôn.
+NTP: Giờ nhìn vào việc cô ta đã quên sạch mấy\N cái tư tưởng cao quý ấy và đánh mất tất cả...
+NTP: thì xem ra là cô ta đã hoàn thành sứ mệnh rồi.
+NTP: Làm bổn vương nhẹ nhõm từ tận đáy lòng.
+NTP: Nhưng còn ngươi thì sao?
+NTP: Dùng sức mạnh khủng khiếp\N để ăn tươi nuốt sống con người...
+NTP: Thấy thỏa mãn chưa hả?
+NTP: Tôi không thấy thỏa mãn tí nào hết.
+NTP: Cảm thấy trống rỗng thì đúng hơn.\NTrả thù chẳng để làm gì cả.
+OS: TRỐNG RỖNG, TỪ TẬN ĐÁY LÒNG.
+OS: KHÔ HÉO, NHƯ HÓA XÁC ƯỚP.
+OS: DẪU VẬY, CŨNG CHẲNG THỂ DỪNG LẠI.
+OS: ĐÚNG.
+OS: VÌ TÔI ĐÃ XONG VIỆC BAO GIỜ ĐÂU.
+OS: CHÍNH VÌ THẾ-
+OS: CÔ GÁI ĐÓ MỚI TRÁNH HẰNG SA SỐ CON MẮT MÀ ĐẾN TẬN ĐÂY.
+NTP: Phải rồi. Về điểm này thì đúng là đáng thất vọng.
+NTP: Không được như mong đợi.
+NTP: Tôi nghĩ ma cà rồng phải siêu hơn thế cơ.
+NTP: Điểm yếu chí mạng là mặt trời, \Nngay từ đầu mà nói đã là quá tệ đi còn gì?
+NTP: Đúng vậy đấy. Ma cà rồng không siêu đến thế đâu.
+NTP: Có vẻ gieo gió thì đến lúc phải gặt bão rồi, \Nnên bổn vương mới bị bắt giữ như thế này.
+NTP: Đừng làm tôi thất vọng nhiều quá.
+NTP: Đây là lúc tôi muốn ngài chứng minh điểm siêu việt của ma cà rồng đấy.
+NTP: Thứ ngươi đang trải nghiệm bây giờ\N không phải là thất vọng, mà là tuyệt vọng.
+NTP: Và bổn vương có thứ hay ho dành cho \Nmấy đứa tuyệt vọng như ngươi đây.
+NTP: Ma cà rồng thì chẳng có gì hay ho cả, \Nnhưng lại có chuyện hay ho cho ngươi đây.
+NTP: Chuyện hay ho? Giai thoại tốt đẹp ý hả?
+NTP: Ma cà rồng thì làm gì có giai thoại tốt đẹp nào.
+NTP: Nếu phải nói thì đây là một vụ thương thảo.
+NTP: Nói luôn đi.
+NTP: Cái thứ mà ngài nói là chuyện ngon ăn đó.
+NTP: Cho phép ngươi được ăn bổn vương đó.
+NTP: Nếu ngươi muốn trở lại làm người,
+NTP: nếu ngươi có thể uống ừng ực được \Nmáu của ma cà rồng chủ là bổn vương
+NTP: thì thời điểm này ngươi vẫn có thể trở lại làm người.
+NTP: Tôi đã nói gì về việc muốn trở lại làm người đâu?
+NTP: Dẫu tôi có bảo đây là điều không hề hay ho gì cả,
+NTP: nhưng tôi không bảo là nó là tệ hại.
+NTP: Ngươi vừa nói là "quá tệ" rồi mà.
+NTP: Đó chỉ là cách dùng từ thôi.
+NTP: Đừng có bắt lỗi tiếng Nhật của tôi.
+NTP: Tôi cũng không nhớ mình \Nbảo là "con người thật tuyệt" đâu.
+NTP: Hay là các nữ sinh cao trung "thật tuyệt"
+NTP: Nếu ngươi nghĩ vậy thì,
+NTP: thì đừng có chỉ uống mỗi máu không, mà hãy ăn sạch bổn vương là được.
+NTP: Ăn sạch hết cả xương thịt luôn.
+NTP: Làm vậy thì, con ma cà rồng chưa hoàn thiện\N như ngươi sẽ hóa thành ma cà rồng giết chủ
+NTP: và sở hữu nguồn sức mạnh lớn hơn hiện tại nhiều.
+NTP: Có thế nào thì ngươi cũng không thiệt đâu.
+NTP: Nếu ngươi muốn trở lại làm người, thì cứ làm người thôi.
+NTP: Còn nếu ngươi muốn thành một \Nma cà rồng mạnh mẽ hơn, đáng sợ hơn,
+NTP: thì cứ thành ma cà rồng mạnh mẽ, đáng sợ hơn đi!
+NTP: Vậy thì ngươi tính sao đây?
+NTP: Ngài sẽ được gì trong cái "chuyện hay" này hả?
+NTP: Từ cái chuyện "ngon ăn" này, từ cái thương thảo này chứ?
+NTP: Ma cà rồng quyết tử, tất tử và vạn tử
+NTP: lại đang định chết cho một kẻ như tôi á?
+NTP: Dĩ nhiên là không rồi. Thương thảo\N về cơ bản là để đôi bên cùng có lợi mà.
+NTP: Dù ngươi có không uống máu hay ăn bổn vương, thì đằng nào bổn vương cũng chết.
+NTP: Nhịn đói đến chết.\NChết vì chán ăn.
+NTP: Nghe có nhục nhã không cơ chứ?
+NTP: Vậy nên ta mới muốn ngươi giết ta.
+NTP: Mới muốn chính trong lần này ngươi sẽ giết bổn vương.
+: Muốn ngươi giết bổn vương lại một lần nữa.
+NTP: Thế tức là ngài muốn tự sát hả?
+NTP: Lý do chết của ma cà rồng, 8 đến 9 phần là tự sát mà nhỉ?
+NTP: Đúng. Họ đều tự sát hết.
+NTP: Nên ta mới muốn ngươi giết ta\Ntrước khi ta thấy muốn tự sát.
+NTP: Nghĩa là ngài cần tôi giúp tự sát...\NÀ, trợ tử phải không nhỉ?
+NTP: Là chết có tôn nghiêm.
+NTP: Kẻ kiêu hãnh như bổn vương chết như vậy mới phải đạo.
+NTP: Chết một cách cao quý, và thảm khốc.
+NTP: Sao lại là tôi? Sao tôi lại được chọn?
+NTP: Ngươi mới là kẻ lựa chọn đó chứ.
+NTP: Bổn vương đã làm như chỉ có hai lựa chọn
+: nhưng ngươi không hút máu hay\N không ăn bổn vương cũng được.
+NTP: Mặc dù bổn vương đã bị yếu đi nhiều, \Nnhưng kẻ có khả năng giết được bổn vương rất ít.
+NTP: Bổn vương ta thì chẳng vội gì cả.
+NTP: Không vội để chết đâu.
+NTP: Chỉ là không còn gì để hối tiếc mà thôi.
+NTP: Vì bằng hữu cũ của bổn vương
+NTP: đang tận hưởng những thú vui vô lo vô nghĩ,\Nvà bổn vương đã thấy tận mắt điều đó.
+NTP: Bổn vương không còn tiếc cái gì hết.
+NTP: Được, tôi sẽ giết ngài.\NVậy xem như ân oán là huề nhé.
+NTP: Kẻ tự để bản thân bị giết hại là tôi...
+NTP: ...sẽ tự bản thân mình giết ngài.
+NTP: Hãy chết một cách đầy kiêu hãnh đi.
+NTP: Chết một cách cao quý và thảm khốc!
+NTP: Phiền ngươi rồi. \NĐúng là bõ công khẩn cầu ngươi mà.
+NTP: Phải rồi.
+NTP: Cho bổn vương biết tên ngươi được chứ?
+NTP: Ta muốn biết tên của con ma cà rồng \Nxuống tay giết một kẻ vĩ đại như ta.
+NTP: Chỉ có vậy thì được thôi.
+NTP: Tên của tôi, kẻ sẽ sát hại ngài, là...
+NTP: Harimaze Kie.
+OS: HARIMAZE KIE
+NTP: Harimaze Kie.
+NTP: Không phải Kiseki Sowa.
+NTP: Đó là Harimaze-chan, được cho là nạn nhân đầu tiên.
+NTP: Nhưng thật ra là hoán đổi thân xác.
+NTP: Người nào biến thành xác ướp thì đều khô queo cả,
+NTP: Vẻ ngoài và diện mạo đều trở nên đồng nhất.
+NTP: Nếu phải nói thì bất kỳ xác ướp nào \Ncũng đều không rõ danh tính cả.
+NTP: Nhưng lý do mà chúng tôi \Nnhận định đó là Harimaze-chan
+: đó là dựa vào vật dụng tùy thân.
+OS: "CÁI XÁC ƯỚP ẤY CÓ TÊN HARIMAZE KIE."
+OS: "CÓ VẺ NHƯ CÔ GÁI ĐÓ ĐÃ LỠ CHẠM TRÁN TRÊN ĐƯỜNG VỀ NHÀ SAU KHI SINH HOẠT CÂU LẠC BỘ."
+NTP: Ngược lại mà nói, nếu lấy đồng phục bản thân mặc cho xác ướp
+NTP: xong cho cầm túi của bản thân, \Nvà cho cầm cả điện thoại của chính mình thì,
+NTP: không phải là sẽ khiến người khác\N nghĩ rằng xác ướp đó là chính mình hay sao?
+OS: HARIMAZE KIE
+NTP: Dẫu vậy...
+NTP: Công bằng mà nói, là xác ướp nào đã bị đánh tráo
+NTP: thì tất cả các xác ướp đều có khả năng bị vậy cả.
+NTP: Chìa khóa ở đây chính là chỗ ám hiệu\N mà Meniko đã giải mã cho mình.
+NTP: Rõ ràng đó là chiêu trò nguỵ tạo nhằm che mắt Gaen cùng các điều tra viên.
+NTP: Nghĩa là vào thời điểm đó, những chuyện nội bộ trong quá trình điều tra đã bị lộ rồi.
+OS: CHUYÊN GIA QUÁI DỊ
+NTP: Con ma cà rồng sát nhân hàng loạt đó\N
+: làm cách nào mà biết được \Nsự tồn tại của Gaen cùng nhóm điều tra?
+OS: "TỚ CÓ THỂ NHỜ CẬU GIÚP\NGIẢI MÃ NỮA ĐƯỢC KHÔNG?"
+NTP: Tôi nghĩ ra cách đó cũng là do 
+: cuộc trò chuyện với \NMeniko đã trở thành gợi ý cho mình.
+OS: "HỪM, HỪM, HỪM?\NĐIỆN THOẠI DI ĐỘNG À."
+OS: "HÓA RA LÀ ÁM HIỆU ĐƯỢC GHI LẠI\NTRÊN ĐIỆN THOẠI SAO?"
+NTP: Đại khái nói về việc điện thoại di động là một phần của não bộ.
+OS: "GIỜ ĐÂY, ĐIỆN THOẠI DI ĐỘNG\NGIỐNG NHƯ LÀ MỘT PHẦN CỦA NÃO BỘ VẬY HA."
+NTP: Nếu như lấy cái điện thoại đó \Ncùng với bộ đồng phục và cặp,
+NTP: và ướm chúng vào cái xác khô do thủ phạm tạo ra...
+NTP: Có nghĩa...
+NTP: Cũng có thể nói là gắn mắt, tai, và não vào cái xác ướp được, nhỉ?
+NTP: Giống lắp đặt camera an ninh cùng với máy nghe lén vậy.
+NTP: Kể cả khi điện thoại bị khóa, hình nền vẫn cứ thế vận hành.
+NTP: Nhiều ứng dụng làm được vậy lắm.
+NTP: Và đây là chi tiết quan trọng.
+NTP: Nhưng điều này là không thể, trừ khi ứng dụng được\N cài đặt vào lúc tìm được cái xác ướp đầu tiên.
+NTP: Cái xác ướp được cho là của Harimaze Kie
+OS: 3 NGÀY TRƯỚC - 2 NGÀY TRƯỚC - 1 NGÀY TRƯỚC - HÔM NAY
+NTP: không có khả năng để lại ám hiệu trên xác ướp của Kuchimoto Kyoumi,
+NTP: theo thứ tự là nạn nhân thứ hai bị tấn công, trừ khi
+NTP: chiếc điện thoại di động bị tình nghi đã bị giở trò từ trước.
+OS: HARIMAZE KIE
+OS: XÁC ƯỚP CỦA AI ĐÓ
+NTP: Điều quan trọng hơn nữa là điện thoại \Nphải được sạc thường xuyên, 
+: nếu không đến một lúc nào đó sẽ hết pin mất.
+NTP: Có nghĩa, việc mình chọn nhà Kanbaru làm địa điểm để hồi sinh Suicide-Master
+NTP: Kanbaru? Xin lỗi, nhưng có thể làm nô lệ của anh chút được không?
+OS: Và cho anh mượn nhà một đêm nhé.
+OS: Em biết rồi.
+OS: KHÓA NHÀ ĐÂY.
+NTP: và bảo Kanbaru ra ngoài vì chính cái lý do đó
+: là điều mà hung thủ đã không biết đến.
+OS: ANH CỨ SỬ DỤNG THOẢI MÁI NHÉ.
+OS: EM ĐỊNH TỔ CHỨC TIỆC ĐỒ NGỦ\NTỐI NAY TẠI NHÀ HIGASA MÀ.
+NTP: Hung thủ không nhắm vào cuộc họp của các cựu thành viên tại nhà Higasa
+NTP: mà hẳn sẽ nhắm vào nhà Kanbaru một cách rất chi là tự nhiên.
+NTP: Kẻ biến chất?
+NTP: À không. Hóa ra là tiền bối Araragi.
+OS: HARIMAZE KIE—\NVÀ CŨNG LÀ KẺ BIẾN CHẤT.
+OS: KẺ TỪ NGƯỜI HÓA THÀNH QUỶ.
+NTP: Hân hạnh được gặp anh, tiền bối Araragi.
+NTP: Đây là lần đầu tiên em nói chuyện với anh,\Nnhưng em nghe về anh nhiều rồi.
+NTP: Có phải anh lại đang cứu người như mọi khi?
+NTP: Cho dù nơi này không hề có một con người nào hết.
+OS: KỂ CẢ ANH.
+OS: ANH CÓ TƯ CÁCH GÌ ĐỂ CHẶN EM LẠI NHỈ?
+NTP: Này, Harimaze-chan.
+NTP: Giống như việc em biết rõ về chuyện của anh,
+: thì anh cũng có chút biết về sự tình của em.
+NTP: Nhưng dù là thế thì em cũng đã đi quá xa rồi.
+NTP: Không phải em "đã đi quá xa",\Nmà là em "đã từ bỏ quá nhiều".
+NTP: Dù em không thể rời đội đi chăng nữa,
+NTP: thì em cũng đâu cần phải từ bỏ sinh mạng của mình nhỉ?
+NTP: Giờ thì vẫn sẽ kịp mà em.
+NTP: Hồi phục tất cả những ai bị em tấn công, \Nvà cả chính em nữa!
+NTP: Cứ mặc kệ em đi anh.
+NTP: Còn những người đó thì sao nhỉ?
+NTP: Chẳng biết họ có muốn trở lại làm người không nữa?
+NTP: Có khi như này mới khiến họ dễ chịu hơn đấy.
+NTP: Không phải là em đã tấn công họ, mà là đã cứu rỗi họ chăng?
+NTP: Vớ vẩn.
+NTP: Em đang nói cái gì đấy?
+NTP: Họ khô queo rồi. Rơi vào tình trạng \Ncòn sống hay đã chết cũng chẳng rõ nữa.
+NTP: Nếu còn sống hay đã chết cũng không biết,\Nthì tất cả học sinh cao trung đều vậy mà anh?
+NTP: Đều khô héo hết cả.
+NTP: Khi trở thành sinh viên đại học, thì anh \Ncũng quên đi luôn cả những cảm xúc đó phải không?
+NTP: Anh thấy rằng chúng em đang \Nthoải mái tận hưởng tuổi thanh xuân sao?
+NTP: Thấy rằng chúng em là mấy bạn \Nnữ sinh cao trung vô lo vô nghĩ sao?
+: Tiền bối Araragi à.
+NTP: Chữ "thanh" trong "thanh xuân"\N đậm hơn anh tưởng đấy.
+NTP: Đó là màu xanh đậm, \Ngiống như bóng tối vậy.
+NTP: Đối với bổn vương, một kẻ mùa đông quên sạch thời thanh xuân,
+NTP: cuộc tranh luận này khiến ta thấy ngại lắm đấy.
+NTP: Chính những cuộc cãi vã này lại là \Nthanh xuân sao? Buồn cười thật đấy
+NTP: Do ngươi không quyết đoán nên chuyện mới thành ra vậy đấy.
+NTP: Ăn, hoặc bị ăn.
+NTP: Ngươi muốn ăn hay là muốn bị ăn?
+NTP: Hay là...
+NTP: Ngươi muốn ăn chủ nhân,\Nhay là ăn nhân vật chính?
+NTP: Phải rồi.
+NTP: Dù ít hay nhiều, thì tôi chán ngấy tuổi thanh xuân rồi.
+NTP: Vì tôi đã chọn bóng tối đỏ rực mà.
+NTP: Tôi đã sai.
+NTP: Thế nên là hãy cứ sai nhiều hơn nào!
+NTP: Tôi là Harimaze Kie!
+NTP: Sinh ngày 14 tháng 4, 16 tuổi.\NCao 170cm. Vị trí dự bị!
+NTP: Lối chơi ưa thích của tôi là giả ném!
+NTP: Và lần này, tôi sẽ xơi tái nhân vật chính!
+NTP: Đã lâu lắm rồi nhỉ, Araragi-kun.
+NTP: Cảm ơn cậu vì đã câu giờ nhé.
+NTP: Cậu buộc tóc kiểu hai đuôi trông hợp phết nhỉ.
+NTP: Kagenui-san, chị ra tay hơi quá rồi đấy.
+NTP: Tôi từng dạy cậu rồi cơ mà, Araragi?
+NTP: Đối với một quái dị bất tử, \Nkhông có chuyện "ra tay quá nặng" đâu.
+NTP: Có đúng không, hả Suicide-Master?
+NTP: Không. Kể cả con quái vật như bổn vương\N cũng thấy cô ra tay quá giới hạn mà, Kagenui.
+NTP: Đó vẫn chưa phải là một con ma cà rồng \N  cần đích thân cô ra tay xử lý đâu. Nó còn non thôi.
+NTP: Nó không phải là ma cà rồng \Nxứng đáng làm đối thủ tôi? Nó còn non à?
+NTP: Nhưng tôi thấy giống như đang tả về cô hơn mà?
+NTP: Lúc ấy thì cô vẫn còn là một đứa bé thì phải.
+NTP: Chuyện chẳng đâu vào đâu hết.
+NTP: Đúng là chẳng thể nhận bổn vương của hiện tại là mục tiêu của cô nữa rồi.
+NTP: Xem ra đúng là vậy.
+NTP: Tôi bay thẳng từ Bắc Cực xuống đây,\Nnhưng gặp nhiều chuyện khó quá.
+NTP: Nên xem hôm nay tôi buộc phải nhắm mắt làm ngơ cho cô rồi.
+NTP: Cái đó thì hên thật đấy.
+NTP: Nhưng giữa cô và bổn vương, ta không biết ai may hơn ai đâu.
+NTP: Xem ra bổn vương ta lại sống được thêm lần nữa rồi.
+NTP: Nói ít thôi.
+NTP: Mà, Araragi-kun này.
+NTP: Đây là ai vậy?
+NTP: Rồi, sau đó bạn nữ sinh cao trung kia ra sao?
+NTP: Là Harimaya-chan... đúng không nhỉ?
+NTP: Ai tên Harimaya cơ?
+NTP: Nếu em đang nói về Harimaze-chan thì,
+NTP: Anh tưởng em ấy chắc kèo \Nsẽ bị Kagenui-san tiêu diệt,
+NTP: nhưng vì để bốn người được \Nđưa đến viện trở lại bình thường,
+NTP: thì buộc phải đặc xá cho em ấy.
+NTP: Kiểu như vấn đề của người lớn đã được\N áp dụng thay cho luật vị thành niên vậy.
+NTP: Nếu không giúp em nó từ ma cà rồng trở lại \Nthành người, bốn đứa kia vẫn sẽ mãi là xác ướp.
+NTP: Ồ?
+NTP: Nhưng, ngộ nhỡ thành ma cà rồng, thì phải giết \N"phụ mẫu" mới trở lại làm người được cơ mà?
+NTP: Cái hồi nghỉ xuân khi anh đang còn là đương sự
+NTP: thì đúng là như vậy.
+NTP: Giờ thì quá trình ấy đang đỡ hơn theo từng ngày.
+NTP: Còn bé gái trần truồng thì sao?
+NTP: Kết cục là Suicide-Master đã bị đuổi ra nước ngoài.
+: Sự việc dừng ở mức trục xuất cưỡng chế.
+NTP: Dù rằng khoảnh khắc chia tay thì lại rất nhẹ nhàng.
+NTP: Cảm giác của ma cà rồng, hay thời gian của ma cà rồng...\NAnh không hiểu rõ chúng lắm đâu.
+NTP: Mà, dù sao thì cũng không phải \Nlà kiếp này không còn gặp lại,
+NTP: nên chắc sẽ có dịp gặp lại đấy.
+NTP: Sao em im ắng thế?\NEm đã biết gì rồi à?
+NTP: Đúng rồi, hình như Shinobu đã biết một cái gì đó nhưng lại đang giấu nhẹm mình.
+NTP: Nhưng, điều mà cô ấy đang giấu mình\Nđã bị lộ sau một câu của em ấy sau khi xong việc.
+OS: CÂU HỎI TỪ MỘT NĂM RƯỠI TRƯỚC
+NTP: Mình có hỏi cô ấy "Đối với cô, loài người là gì?" \Nxong cô ấy mất một hồi mới trả lời câu hỏi đó.
+NTP: Hẳn là quái vật rồi.
+NTP: Koyomin.
+NTP: Rồi thì lời hứa miệng với \N Gaen-san có được thành lập không?
+NTP: Em thấy đó mới là điểm bắt đầu đấy.
+NTP: Tạm thời thì cũng coi như là đã thành lập.
+NTP: Dối trá này, lừa gạt này, giả mạo này...
+NTP: Nếu phần người của một con người \Nbị vướng vào mấy cái đó thì,
+NTP: việc thành lập Ban Đồn Đại là điều cấp bách.
+NTP: Cuối cùng cũng đến lúc đó rồi à.
+NTP: Mặc dù Harimaze-chan thì vậy,\N nhưng cuối cùng việc đó được tha thứ...
+NTP: ...là do anh vẫn còn là một đứa trẻ.
+NTP: Ôi trời. Đến tiết dạy tiếp theo của em rồi.
+NTP: Vậy thì hẹn gặp lại anh trong thời gian tới gần nhất nhé.
+NTP: Có chuyện gì thì em sẽ liên hệ anh sau.
+NTP: Cái đó chẳng phải là câu nói kiểu mẫu cầm chắc sẽ không liên hệ lại sao...
+NTP: Ồ?
+NTP: Anh đeo thứ gì dễ thương vậy.
+NTP: Tức là Koyomin anh cũng đã trở thành \Nthành viên của đội bóng rổ nữ rồi hả?
+NTP: Ừ thì, đâm lao phải theo lao thôi.
+NTP: Với sự giúp đỡ từ Kanbaru với Higasa-chan,
+NTP: Anh sẽ rất hân hạnh tiếp tục giúp sức cho kế hoạch để giải quyết tình hình hiện tại.
+NTP: Araragi-kun này, anh vẫn là trẻ con \Nchẳng phải là ở những điểm đó hay sao?
+NTP: Kagenui-san không cảm thấy phân vân sao?
+NTP: Dù cho những điều cô ta đã làm là một tội nghiêm trọng đến mức không thể tha thứ, 
+: trong luật người hay luật quỷ đều vậy.
+NTP: Nhưng, dù sao thì tôi vẫn buộc phải\Nsuy xét về tình cảnh của Harimaze Kie.
+NTP: Đã lỡ suy nghĩ về nó, đã lỡ lung lạc vì nó.
+NTP: Chẳng có gì lung lạc cả, vì tôi là người lớn mà.
+NTP: Câu trả lời đặc biệt đó, khó mà nghĩ là đang đại diện cho ý kiến của số đông
+NTP: nhưng lại thốt ra bình thản không chút do dự nào.
+NTP: Nhưng mà, thì ra là vậy
+NTP: Nếu đó mới là người lớn thì tôi chẳng khác nào trẻ con.
+NTP: Tôi chỉ là một thằng nhóc, còn non nớt hơn cả một bé gái.
+NTP: Giống như đám ma cà rồng được hoãn thi hành án,
+NTP: Kể cả tôi có bất tử,\Nhay là xuống địa ngục đi chăng nữa,
+NTP: hay dù có tốt nghiệp cao trung, \Ndù có làm sinh viên đại học...
+NTP: thì Koyomi Araragi này vẫn đang ở \Nngay trong giữa giai đoạn đình trệ mà thôi.
+NTP: UNHAPPY?\NA troubled human child
+NTP: UNLUCKY?\NFor the inhumane
+NTP: BE HAPPY!\NAim timelessly
+NTP: Because you're alive
+NTP: A past that you looked away from too
+NTP: A boring future too
+NTP: Counseling
+NTP: Oh man
+NTP: All the times and places\NPeace, peace
+NTP: UNHAPPY?
+NTP: UNLUCKY?
+NTP: BE HAPPY!
+NTP: UNDEAD
+NTP: Cut in\NSomehow, for some reason
+NTP: In the mere future
+NTP: I have a feeling that...
+NTP: I can't have any hopes or expectations
+NTP: I've lived long enough
+NTP: I'm fed up with déjà vu\Nand the run-of-the-mill
+NTP: There are no signs of wonderful occasions
+NTP: That's too bad
+NTP: It's the cause and effect\Nof accumulated experiences
+NTP: Conventional myths and boring evolution
+NTP: In other words, I need stimulation
+NTP: I got tired of it\NI got used to it
+NTP: Just kidding\NGuidance that gets adjusted
+NTP: Compliance that increases
+NTP: They seem to be shoved under the rug
+NTP: I sucked it all
+NTP: That, this and all of it
+NTP: They all taste the same
+NTP: UNDEAD
+NTP: I'm not dead ye

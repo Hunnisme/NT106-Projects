@@ -67,3 +67,27 @@ D:\CHAT\server\obj\Debug\net8.0\refint\server.dll
 D:\CHAT\server\obj\Debug\net8.0\server.pdb
 D:\CHAT\server\obj\Debug\net8.0\server.genruntimeconfig.cache
 D:\CHAT\server\obj\Debug\net8.0\ref\server.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\bin\Debug\net8.0\server.exe
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\bin\Debug\net8.0\server.deps.json
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\bin\Debug\net8.0\server.runtimeconfig.json
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\bin\Debug\net8.0\server.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\bin\Debug\net8.0\server.pdb
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\bin\Debug\net8.0\DnsClient.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\bin\Debug\net8.0\MongoDB.Bson.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\bin\Debug\net8.0\MongoDB.Driver.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\bin\Debug\net8.0\SharpCompress.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\bin\Debug\net8.0\Snappier.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\bin\Debug\net8.0\ZstdSharp.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\obj\Debug\net8.0\server.csproj.AssemblyReference.cache
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\obj\Debug\net8.0\server.GeneratedMSBuildEditorConfig.editorconfig
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\obj\Debug\net8.0\server.AssemblyInfoInputs.cache
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\obj\Debug\net8.0\server.AssemblyInfo.cs
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\obj\Debug\net8.0\server.csproj.CoreCompileInputs.cache
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\obj\Debug\net8.0\server.sourcelink.json
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\obj\Debug\net8.0\server.csproj.Up2Date
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\obj\Debug\net8.0\server.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\obj\Debug\net8.0\refint\server.dll
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\obj\Debug\net8.0\server.pdb
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\obj\Debug\net8.0\server.genruntimeconfig.cache
+D:\code\ltm\Doan\NT106 Project\CHAT with send files\server\obj\Debug\net8.0\ref\server.dll

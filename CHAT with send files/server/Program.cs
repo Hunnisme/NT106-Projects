@@ -129,46 +129,6 @@ class Server
                     
                 }
 
-                //else if (message.StartsWith("GET_FILE"))
-                //{
-                //string[] parts = message.Split('|');
-                //string fileName = parts[1];
-
-                //FileMetadata fileMeta = Database.GetFileMetadata(roomCode, fileName);
-                //if (fileMeta != null)
-                //{
-                //    var filePath = fileMeta.FilePath;
-                //    string originalFileName = Path.GetFileName(filePath);
-                //    long fileSize = new FileInfo(filePath).Length;
-
-                //    // Gửi phản hồi tới client với thông tin tệp
-                //    SendMessage(clientHandler.Stream, $"DOWNLOAD_FILE|{originalFileName}|{fileSize}");
-
-                //    // Gửi dữ liệu tệp
-                //    using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-                //    {
-                //        byte[] buffer = new byte[4096];
-                //        int bytesRead;
-                //        while ((bytesRead = fs.Read(buffer, 0, buffer.Length)) > 0)
-                //        {
-                //            clientHandler.Stream.Write(buffer, 0, bytesRead);
-                //        }
-                //    }
-
-                //    Console.WriteLine($"File {fileName} sent to client.");
-                //}
-                //else
-                //{
-                //    SendMessage(clientHandler.Stream, "ERROR|File not found.");
-                //}
-
-
-
-
-
-
-                //}
-
                 else if (message.StartsWith("GET_FILE"))
                 {
                     string[] parts = message.Split('|');
@@ -244,9 +204,9 @@ class Server
 
     private static string AskForUserName(NetworkStream stream)
     {
-        string prompt = "Enter your username: ";
-        byte[] promptBytes = Encoding.UTF8.GetBytes(prompt);
-        stream.Write(promptBytes, 0, promptBytes.Length);
+        //string prompt = "Enter your username: ";
+        //byte[] promptBytes = Encoding.UTF8.GetBytes(prompt);
+        //stream.Write(promptBytes, 0, promptBytes.Length);
 
         byte[] buffer = new byte[1024];
         int bytesRead = stream.Read(buffer, 0, buffer.Length);
@@ -255,9 +215,9 @@ class Server
 
     private static string AskForRoomCode(NetworkStream stream)
     {
-        string prompt = "Enter room code: ";
-        byte[] promptBytes = Encoding.UTF8.GetBytes(prompt);
-        stream.Write(promptBytes, 0, promptBytes.Length);
+        //string prompt = "Enter room code: ";
+        //byte[] promptBytes = Encoding.UTF8.GetBytes(prompt);
+        //stream.Write(promptBytes, 0, promptBytes.Length);
 
         byte[] buffer = new byte[1024];
         int bytesRead = stream.Read(buffer, 0, buffer.Length);
