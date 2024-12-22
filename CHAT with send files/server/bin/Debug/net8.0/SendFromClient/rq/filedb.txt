@@ -1,0 +1,127 @@
+-- Tạo DATABASE
+CREATE DATABASE MANAGEMENT_PROJECT;
+USE MANAGEMENT_PROJECT;
+
+-- Bảng Users
+CREATE TABLE Users (
+    UserID INT IDENTITY(1,1),
+    Name VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) UNIQUE NOT NULL,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    CONSTRAINT PK_Users PRIMARY KEY (UserID)
+);
+
+-- Bảng Role
+CREATE TABLE Role (
+    RoleID INT IDENTITY(1,1),
+    Name VARCHAR(50) NOT NULL UNIQUE, -- Tên vai trò
+    Description TEXT,
+    CONSTRAINT PK_Role PRIMARY KEY (RoleID)
+);
+
+-- Bảng Project
+CREATE TABLE Project (
+    ProjectID INT IDENTITY(1,1),
+    Name VARCHAR(255) NOT NULL,
+    Description TEXT,
+    Status VARCHAR(50) DEFAULT 'Not Started', -- Trạng thái tiến độ
+    CreatedBy INT NOT NULL, -- Người tạo dự án (trưởng nhóm)
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    CONSTRAINT PK_Project PRIMARY KEY (ProjectID)
+);
+
+-- Bảng Task
+CREATE TABLE Task (
+    TaskID INT IDENTITY(1,1),
+    Name VARCHAR(255) NOT NULL,
+    Description TEXT,
+    Status VARCHAR(50) DEFAULT 'Not Started', -- Trạng thái công việc
+    DueDate DATE,
+    AssignedBy INT NOT NULL, -- Người giao task (trưởng nhóm)
+    ProjectID INT NOT NULL, -- Thuộc dự án nào
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    CONSTRAINT PK_Task PRIMARY KEY (TaskID)
+);
+
+-- Bảng Tag
+CREATE TABLE Tag (
+    TagID INT IDENTITY(1,1),
+    Name VARCHAR(100) NOT NULL UNIQUE, -- Tên tag
+    CreatedBy INT NOT NULL, -- Người tạo tag (trưởng nhóm)
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    CONSTRAINT PK_Tag PRIMARY KEY (TagID)
+);
+
+-- Bảng User_Role
+CREATE TABLE User_Role (
+    UserID INT NOT NULL,
+    ProjectID INT NOT NULL,
+    RoleID INT NOT NULL,
+    CONSTRAINT PK_User_Role PRIMARY KEY (UserID, ProjectID, RoleID)
+);
+
+-- Bảng Task_User
+CREATE TABLE Task_User (
+    TaskID INT NOT NULL,
+    UserID INT NOT NULL,
+    CONSTRAINT PK_Task_User PRIMARY KEY (TaskID, UserID)
+);
+
+-- Bảng Task_Tag
+CREATE TABLE Task_Tag (
+    TaskID INT NOT NULL,
+    TagID INT NOT NULL,
+    CONSTRAINT PK_Task_Tag PRIMARY KEY (TaskID, TagID)
+);
+
+-- Thêm ràng buộc CHECK
+ALTER TABLE Project
+ADD CONSTRAINT CHK_Project_Status CHECK (Status IN ('Not Started', 'In Progress', 'Completed'));
+
+ALTER TABLE Task
+ADD CONSTRAINT CHK_Task_Status CHECK (Status IN ('Not Started', 'In Progress', 'Completed'));
+
+-- Thêm khóa ngoại cho bảng Project
+ALTER TABLE Project
+ADD CONSTRAINT FK_Project_CreatedBy FOREIGN KEY (CreatedBy) REFERENCES Users(UserID);
+
+-- Thêm khóa ngoại cho bảng Task
+ALTER TABLE Task
+ADD CONSTRAINT FK_Task_AssignedBy FOREIGN KEY (AssignedBy) REFERENCES Users(UserID) ;
+
+ALTER TABLE Task
+ADD CONSTRAINT FK_Task_ProjectID FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID) ;
+
+-- Thêm khóa ngoại cho bảng Tag
+ALTER TABLE Tag
+ADD CONSTRAINT FK_Tag_CreatedBy FOREIGN KEY (CreatedBy) REFERENCES Users(UserID) ;
+
+-- Thêm khóa ngoại cho bảng User_Role
+ALTER TABLE User_Role
+ADD CONSTRAINT FK_User_Role_UserID FOREIGN KEY (UserID) REFERENCES Users(UserID) ;
+
+ALTER TABLE User_Role
+ADD CONSTRAINT FK_User_Role_ProjectID FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID) ;
+
+ALTER TABLE User_Role
+ADD CONSTRAINT FK_User_Role_RoleID FOREIGN KEY (RoleID) REFERENCES Role(RoleID);
+
+-- Thêm khóa ngoại cho bảng Task_User
+ALTER TABLE Task_User
+ADD CONSTRAINT FK_Task_User_TaskID FOREIGN KEY (TaskID) REFERENCES Task(TaskID) ;
+
+ALTER TABLE Task_User
+ADD CONSTRAINT FK_Task_User_UserID FOREIGN KEY (UserID) REFERENCES Users(UserID) ;
+
+-- Thêm khóa ngoại cho bảng Task_Tag
+ALTER TABLE Task_Tag
+ADD CONSTRAINT FK_Task_Tag_TaskID FOREIGN KEY (TaskID) REFERENCES Task(TaskID);
+
+ALTER TABLE Task_Tag
+ADD CONSTRAINT FK_Task_Tag_TagID FOREIGN KEY (TagID) REFERENCES Tag(TagID) ;
+
+-- Tạo bảng Resources_Tasks
+CREATE TABLE Resources_Tasks (
+    ResourceID INT IDENTITY(1,1) PRIMARY KEY, -- ID nguồn tài nguyên
+    TaskID INT NOT NULL,                      -- Liên kết tới Task
+    ResourceType VARCHAR(50) 

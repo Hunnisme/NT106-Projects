@@ -11,6 +11,14 @@
       "RelativeMoniker": "D:0:0:{B31D5A70-74E1-49F9-A30A-05B638E2FB60}|chatcomman\\chatcomman.csproj|solutionrelative:chatcomman\\chatcomman.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{AB2C4A9E-A067-4CE0-B58D-29C79055D185}|CHAT\\CHAT.csproj|D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\chat\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AB2C4A9E-A067-4CE0-B58D-29C79055D185}|CHAT\\CHAT.csproj|solutionrelative:chat\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB2C4A9E-A067-4CE0-B58D-29C79055D185}|CHAT\\CHAT.csproj|d:\\code\\ltm\\doan\\nt106 project\\chat with send files\\chat\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB2C4A9E-A067-4CE0-B58D-29C79055D185}|CHAT\\CHAT.csproj|solutionrelative:chat\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{19A45254-D265-4D03-9B50-35443A0F9EA1}|server\\server.csproj|d:\\code\\ltm\\doan\\nt106 project\\chat with send files\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19A45254-D265-4D03-9B50-35443A0F9EA1}|server\\server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,20 +27,15 @@
       "RelativeMoniker": "D:0:0:{19A45254-D265-4D03-9B50-35443A0F9EA1}|server\\server.csproj|solutionrelative:server\\server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ASUS VIVOBOOK\\AppData\\Local\\Temp\\.vsdbgsrc\\72905e1dbdcf49c87ed4241fa7f49cf917df9ea2dd2776340af6b7cfb0fae700\\Dictionary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AB2C4A9E-A067-4CE0-B58D-29C79055D185}|CHAT\\CHAT.csproj|d:\\code\\ltm\\doan\\nt106 project\\chat with send files\\chat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB2C4A9E-A067-4CE0-B58D-29C79055D185}|CHAT\\CHAT.csproj|solutionrelative:chat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB2C4A9E-A067-4CE0-B58D-29C79055D185}|CHAT\\CHAT.csproj|d:\\code\\ltm\\doan\\nt106 project\\chat with send files\\chat\\chat.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{AB2C4A9E-A067-4CE0-B58D-29C79055D185}|CHAT\\CHAT.csproj|solutionrelative:chat\\chat.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB2C4A9E-A067-4CE0-B58D-29C79055D185}|CHAT\\CHAT.csproj|d:\\code\\ltm\\doan\\nt106 project\\chat with send files\\chat\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB2C4A9E-A067-4CE0-B58D-29C79055D185}|CHAT\\CHAT.csproj|solutionrelative:chat\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB2C4A9E-A067-4CE0-B58D-29C79055D185}|CHAT\\CHAT.csproj|D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\chat\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{AB2C4A9E-A067-4CE0-B58D-29C79055D185}|CHAT\\CHAT.csproj|solutionrelative:chat\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB2C4A9E-A067-4CE0-B58D-29C79055D185}|CHAT\\CHAT.csproj|d:\\code\\ltm\\doan\\nt106 project\\chat with send files\\chat\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,7 +52,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -64,21 +67,39 @@
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
+              "Title": "Dictionary.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS VIVOBOOK\\AppData\\Local\\Temp\\.vsdbgsrc\\72905e1dbdcf49c87ed4241fa7f49cf917df9ea2dd2776340af6b7cfb0fae700\\Dictionary.cs",
+              "ToolTip": "C:\\Users\\ASUS VIVOBOOK\\AppData\\Local\\Temp\\.vsdbgsrc\\72905e1dbdcf49c87ed4241fa7f49cf917df9ea2dd2776340af6b7cfb0fae700\\Dictionary.cs [Read Only]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMGAAAkAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T08:48:44.332Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "server.csproj",
               "DocumentMoniker": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\server\\server.csproj",
               "RelativeDocumentMoniker": "server\\server.csproj",
               "ToolTip": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\server\\server.csproj",
               "RelativeToolTip": "server\\server.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-20T12:46:43.139Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T12:46:43.139Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\CHAT\\Program.cs",
               "RelativeDocumentMoniker": "CHAT\\Program.cs",
@@ -98,12 +119,11 @@
               "RelativeToolTip": "chatcomman\\chatcomman.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-20T11:44:43.979Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T11:44:43.979Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\CHAT\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "CHAT\\Form1.Designer.cs",
@@ -111,12 +131,11 @@
               "RelativeToolTip": "CHAT\\Form1.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T11:44:36.846Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T11:44:36.846Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\CHAT\\Form1.cs",
               "RelativeDocumentMoniker": "CHAT\\Form1.cs",
@@ -129,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "CHAT.csproj",
               "DocumentMoniker": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\CHAT\\CHAT.csproj",
               "RelativeDocumentMoniker": "CHAT\\CHAT.csproj",
@@ -137,8 +156,7 @@
               "RelativeToolTip": "CHAT\\CHAT.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-20T11:44:25.411Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T11:44:25.411Z"
             },
             {
               "$type": "Document",
@@ -148,14 +166,14 @@
               "RelativeDocumentMoniker": "chatcomman\\Program.cs",
               "ToolTip": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\chatcomman\\Program.cs",
               "RelativeToolTip": "chatcomman\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-03T20:44:50.123Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -165,36 +183,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\server\\Program.cs",
               "RelativeDocumentMoniker": "server\\Program.cs",
               "ToolTip": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\server\\Program.cs",
               "RelativeToolTip": "server\\Program.cs",
-              "ViewState": "AgIAAEUBAAAAAAAAAIA3wE8BAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFEBAAAAAAAAAAAAABgAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T20:36:15.519Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+              "WhenOpened": "2024-12-03T20:36:15.519Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\CHAT\\Form1.cs",
               "RelativeDocumentMoniker": "CHAT\\Form1.cs",
-              "ToolTip": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\CHAT\\Form1.cs [Design]",
-              "RelativeToolTip": "CHAT\\Form1.cs [Design]",
+              "ToolTip": "D:\\CHAT\\CHAT\\Form1.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\CHAT\\CHAT\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T19:50:12.534Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-03T19:50:12.534Z"
             }
           ]
         }
