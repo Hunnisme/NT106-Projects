@@ -341,7 +341,7 @@ public class Database
 
     public static void Init()
     {
-        var client = new MongoClient("mongodb://localhost:27017");
+        var client = new MongoClient("mongodb://192.168.1.16:27017");
         var database = client.GetDatabase("chatapp");
         roomsCollection = database.GetCollection<Room>("rooms");
         messagesCollection = database.GetCollection<Message>("messages");

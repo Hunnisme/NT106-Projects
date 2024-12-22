@@ -605,11 +605,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CHAT\\chatcomman\\chatcomman.csproj",
+      "projectUniqueName": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\chatcomman\\chatcomman.csproj",
       "projectName": "chatcomman",
-      "projectPath": "D:\\CHAT\\chatcomman\\chatcomman.csproj",
+      "projectPath": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\chatcomman\\chatcomman.csproj",
       "packagesPath": "C:\\Users\\Hunn\\.nuget\\packages\\",
-      "outputPath": "D:\\CHAT\\chatcomman\\obj\\",
+      "outputPath": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\chatcomman\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

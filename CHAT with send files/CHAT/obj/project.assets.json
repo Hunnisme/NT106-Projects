@@ -728,11 +728,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CHAT\\CHAT\\CHAT.csproj",
+      "projectUniqueName": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\CHAT\\CHAT.csproj",
       "projectName": "CHAT",
-      "projectPath": "D:\\CHAT\\CHAT\\CHAT.csproj",
+      "projectPath": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\CHAT\\CHAT.csproj",
       "packagesPath": "C:\\Users\\Hunn\\.nuget\\packages\\",
-      "outputPath": "D:\\CHAT\\CHAT\\obj\\",
+      "outputPath": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\CHAT\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

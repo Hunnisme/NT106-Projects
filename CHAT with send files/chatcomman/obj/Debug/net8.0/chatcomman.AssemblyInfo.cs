@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("chatcomman")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e30500bb0efc02c2df3f05d72de8e55dbdf4df95")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31f3f9584d3dcb896e5313a92cc98f953889a9bf")]
 [assembly: System.Reflection.AssemblyProductAttribute("chatcomman")]
 [assembly: System.Reflection.AssemblyTitleAttribute("chatcomman")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
