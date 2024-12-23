@@ -12,12 +12,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(session({
-    secret: 'z]Q>#{p%-QDhm5fbY@|kf$)V(~bc*b', // Secret dùng để mã hóa session
-    resave: false, // Không lưu lại session nếu không thay đổi
-    saveUninitialized: true, // Lưu session mới ngay cả khi không chỉnh sửa
+    secret: 'z]Q>#{p%-QDhm5fbY@|kf$)V(~bc*b', 
+    resave: false, 
+    saveUninitialized: true,
     store: MongoStore.create({
         mongoUrl: 'mongodb://192.168.1.16:27017/DOAN_NT106', // URL MongoDB
-        collectionName: 'sessions' // Tên collection lưu session
+        collectionName: 'sessions' 
     }),
     cookie: {
         secure: process.env.NODE_ENV === 'production', // Chỉ hoạt động trên HTTPS ở production
@@ -141,7 +141,7 @@ app.post('/login', async (req, res) => {
             $or: [{ Username: Identifier }, { Email: Identifier }]
         });
 
-        // Kiểm tra thông tin người dùng và mật khẩu
+
         if (user && await bcrypt.compare(Password, user.Password)) {
             // Lưu thông tin vào session
             req.session.user_id = user._id.toString();
@@ -151,10 +151,80 @@ app.post('/login', async (req, res) => {
                 message: "Login successful!",
                 username: user.Username,
                 user_id: user._id.toString(),
+                email: user.Email,
             });
         } else {
             return res.status(401).json({ error: "Invalid username/email or password!" });
         }
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ error: "Internal server error" });
+    }
+});
+app.get('/user', async (req, res) => {
+    const { UserID } = req.query;
+
+    if (!UserID || !ObjectId.isValid(UserID)) {
+        return res.status(400).json({ error: "Invalid or missing UserID." });
+    }
+
+    try {
+        const user = await userCollection.findOne({ _id: new ObjectId(UserID) }, { projection: { Password: 0 } });
+
+        if (!user) {
+            return res.status(404).json({ error: "User not found." });
+        }
+
+        return res.status(200).json(user);
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ error: "Internal server error" });
+    }
+});
+app.put('/user', async (req, res) => {
+    const { UserID, Username, Email, Name, Password } = req.body;
+
+    if (!UserID || !ObjectId.isValid(UserID)) {
+        return res.status(400).json({ error: "Invalid or missing UserID." });
+    }
+
+    const updates = {};
+    if (Username) updates.Username = Username;
+    if (Email) updates.Email = Email;
+    if (Name) updates.Name = Name;
+    if (Password) updates.Password = await bcrypt.hash(Password, 10); 
+
+    try {
+        const result = await userCollection.updateOne(
+            { _id: new ObjectId(UserID) },
+            { $set: updates }
+        );
+
+        if (result.matchedCount === 0) {
+            return res.status(404).json({ error: "User not found." });
+        }
+
+        return res.status(200).json({ message: "User information updated successfully." });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ error: "Internal server error" });
+    }
+});
+app.delete('/user', async (req, res) => {
+    const { UserID } = req.body;
+
+    if (!UserID || !ObjectId.isValid(UserID)) {
+        return res.status(400).json({ error: "Invalid or missing UserID." });
+    }
+
+    try {
+        const result = await userCollection.deleteOne({ _id: new ObjectId(UserID) });
+
+        if (result.deletedCount === 0) {
+            return res.status(404).json({ error: "User not found." });
+        }
+
+        return res.status(200).json({ message: "User account deleted successfully." });
     } catch (err) {
         console.error(err);
         return res.status(500).json({ error: "Internal server error" });
@@ -966,7 +1036,7 @@ app.put('/update_task_progress', async (req, res) => {
 
     if (Status && !validStatuses.includes(Status)) {
         return res.status(400).json({
-            error: `Invalid status. Allowed statuses are: ${validStatuses.join(', ')}`
+            error: `Invalid status. Allowed statuses are: ${validStatuses.join(', ')}`,
         });
     }
 
@@ -995,6 +1065,21 @@ app.put('/update_task_progress', async (req, res) => {
 
         if (result.matchedCount === 0) {
             return res.status(500).json({ error: "Failed to update task progress." });
+        }
+
+        // Check if all tasks in the project are completed
+        const tasks = await db.collection('tasks').find({ ProjectID: task.ProjectID }).toArray();
+
+        if (tasks.every(task => task.Status === "Completed")) {
+            // Update the project status to "Complete"
+            const projectUpdateResult = await projectsCollection.updateOne(
+                { _id: task.ProjectID },
+                { $set: { Status: "Complete" } }
+            );
+
+            if (projectUpdateResult.modifiedCount > 0) {
+                console.log(`Project ${task.ProjectID} status updated to "Complete".`);
+            }
         }
 
         return res.status(200).json({ message: "Task progress updated successfully!" });
