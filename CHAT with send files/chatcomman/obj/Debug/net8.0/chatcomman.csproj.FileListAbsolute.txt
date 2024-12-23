@@ -44,50 +44,49 @@ D:\CHAT\CHAT\chatcomman\obj\Debug\net8.0\refint\chatcomman.dll
 D:\CHAT\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.pdb
 D:\CHAT\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.genruntimeconfig.cache
 D:\CHAT\CHAT\chatcomman\obj\Debug\net8.0\ref\chatcomman.dll
-D:\CHAT\chatcomman\bin\Debug\net8.0\chatcomman.exe
-D:\CHAT\chatcomman\bin\Debug\net8.0\chatcomman.deps.json
-D:\CHAT\chatcomman\bin\Debug\net8.0\chatcomman.runtimeconfig.json
-D:\CHAT\chatcomman\bin\Debug\net8.0\chatcomman.dll
-D:\CHAT\chatcomman\bin\Debug\net8.0\chatcomman.pdb
-D:\CHAT\chatcomman\bin\Debug\net8.0\DnsClient.dll
-D:\CHAT\chatcomman\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\CHAT\chatcomman\bin\Debug\net8.0\MongoDB.Bson.dll
-D:\CHAT\chatcomman\bin\Debug\net8.0\MongoDB.Driver.dll
-D:\CHAT\chatcomman\bin\Debug\net8.0\SharpCompress.dll
-D:\CHAT\chatcomman\bin\Debug\net8.0\Snappier.dll
-D:\CHAT\chatcomman\bin\Debug\net8.0\ZstdSharp.dll
-D:\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.csproj.AssemblyReference.cache
-D:\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.GeneratedMSBuildEditorConfig.editorconfig
-D:\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.AssemblyInfoInputs.cache
-D:\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.AssemblyInfo.cs
-D:\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.csproj.CoreCompileInputs.cache
-D:\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.csproj.Up2Date
-D:\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.dll
-D:\CHAT\chatcomman\obj\Debug\net8.0\refint\chatcomman.dll
-D:\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.pdb
-D:\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.genruntimeconfig.cache
-D:\CHAT\chatcomman\obj\Debug\net8.0\ref\chatcomman.dll
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\chatcomman.exe
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\chatcomman.deps.json
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\chatcomman.runtimeconfig.json
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\chatcomman.dll
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\chatcomman.pdb
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\DnsClient.dll
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\MongoDB.Bson.dll
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\MongoDB.Driver.dll
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\SharpCompress.dll
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\Snappier.dll
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\bin\Debug\net8.0\ZstdSharp.dll
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.csproj.AssemblyReference.cache
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.GeneratedMSBuildEditorConfig.editorconfig
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.AssemblyInfoInputs.cache
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.AssemblyInfo.cs
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.csproj.CoreCompileInputs.cache
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.sourcelink.json
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.csproj.Up2Date
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.dll
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\refint\chatcomman.dll
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.pdb
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\chatcomman.genruntimeconfig.cache
-D:\code\ltm\Doan\NT106 Project\CHAT with send files\chatcomman\obj\Debug\net8.0\ref\chatcomman.dll
+D:\newwwwww\CHAT\CHAT\chatcomman\bin\Debug\net8.0\chatcomman.exe
+D:\newwwwww\CHAT\CHAT\chatcomman\bin\Debug\net8.0\chatcomman.deps.json
+D:\newwwwww\CHAT\CHAT\chatcomman\bin\Debug\net8.0\chatcomman.runtimeconfig.json
+D:\newwwwww\CHAT\CHAT\chatcomman\bin\Debug\net8.0\chatcomman.dll
+D:\newwwwww\CHAT\CHAT\chatcomman\bin\Debug\net8.0\chatcomman.pdb
+D:\newwwwww\CHAT\CHAT\chatcomman\bin\Debug\net8.0\DnsClient.dll
+D:\newwwwww\CHAT\CHAT\chatcomman\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\newwwwww\CHAT\CHAT\chatcomman\bin\Debug\net8.0\MongoDB.Bson.dll
+D:\newwwwww\CHAT\CHAT\chatcomman\bin\Debug\net8.0\MongoDB.Driver.dll
+D:\newwwwww\CHAT\CHAT\chatcomman\bin\Debug\net8.0\SharpCompress.dll
+D:\newwwwww\CHAT\CHAT\chatcomman\bin\Debug\net8.0\Snappier.dll
+D:\newwwwww\CHAT\CHAT\chatcomman\bin\Debug\net8.0\ZstdSharp.dll
+D:\newwwwww\CHAT\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.csproj.AssemblyReference.cache
+D:\newwwwww\CHAT\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.GeneratedMSBuildEditorConfig.editorconfig
+D:\newwwwww\CHAT\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.AssemblyInfoInputs.cache
+D:\newwwwww\CHAT\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.AssemblyInfo.cs
+D:\newwwwww\CHAT\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.csproj.CoreCompileInputs.cache
+D:\newwwwww\CHAT\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.csproj.Up2Date
+D:\newwwwww\CHAT\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.dll
+D:\newwwwww\CHAT\CHAT\chatcomman\obj\Debug\net8.0\refint\chatcomman.dll
+D:\newwwwww\CHAT\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.pdb
+D:\newwwwww\CHAT\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.genruntimeconfig.cache
+D:\newwwwww\CHAT\CHAT\chatcomman\obj\Debug\net8.0\ref\chatcomman.dll
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\bin\Debug\net8.0\chatcomman.exe
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\bin\Debug\net8.0\chatcomman.deps.json
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\bin\Debug\net8.0\chatcomman.runtimeconfig.json
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\bin\Debug\net8.0\chatcomman.dll
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\bin\Debug\net8.0\chatcomman.pdb
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\bin\Debug\net8.0\DnsClient.dll
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\bin\Debug\net8.0\MongoDB.Bson.dll
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\bin\Debug\net8.0\MongoDB.Driver.dll
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\bin\Debug\net8.0\SharpCompress.dll
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\bin\Debug\net8.0\Snappier.dll
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\bin\Debug\net8.0\ZstdSharp.dll
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.csproj.AssemblyReference.cache
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.GeneratedMSBuildEditorConfig.editorconfig
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.AssemblyInfoInputs.cache
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.AssemblyInfo.cs
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.csproj.CoreCompileInputs.cache
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.csproj.Up2Date
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.dll
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\obj\Debug\net8.0\refint\chatcomman.dll
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.pdb
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\obj\Debug\net8.0\chatcomman.genruntimeconfig.cache
+D:\newwww_fake\CHAT - Copy\CHAT\chatcomman\obj\Debug\net8.0\ref\chatcomman.dll

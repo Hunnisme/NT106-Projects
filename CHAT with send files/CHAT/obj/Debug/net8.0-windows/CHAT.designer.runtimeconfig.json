@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Hunn\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Hunn\\.nuget\\packages",
+      "C:\\Users\\ASUS VIVOBOOK\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\ASUS VIVOBOOK\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {

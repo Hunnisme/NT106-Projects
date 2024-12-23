@@ -8,67 +8,68 @@ using System.Threading;
 class Client
 {
     private static TcpClient tcpClient;
+    private static TcpClient tcpClientFile;
     private static NetworkStream stream;
-    private static string roomCode;
+    private static NetworkStream fileStream;
 
     static void Main(string[] args)
     {
         IPAddress[] addresses = Dns.GetHostAddresses("chat.hunn.io.vn");
-        string serverAddress = string.Join(", ", Array.ConvertAll(addresses, ip => ip.ToString())); // Địa chỉ IP server
-        int port = 8080;
+        string serverAddress = string.Join(", ", Array.ConvertAll(addresses, ip => ip.ToString()));
+        //string serverAddress = "127.0.0.1"; // Server IP
 
-        tcpClient = new TcpClient(serverAddress, port);
+        int port = 8080;
+        int portFile = 8081;
+
+        IPEndPoint endPoint = new IPEndPoint(IPAddress.Parse(serverAddress), port);
+        IPEndPoint endPointFile = new IPEndPoint(IPAddress.Parse(serverAddress), portFile);
+
+        tcpClient = new TcpClient();
+        tcpClientFile = new TcpClient();
+
+        // Construct the stream message and connect to server
+        tcpClient.Connect(endPoint);
         stream = tcpClient.GetStream();
+
+        // Construct the stream file and connect to server
+        tcpClientFile.Connect(endPointFile);
+        fileStream = tcpClientFile.GetStream();
 
         Console.WriteLine("Connected to server.");
 
-        // Yêu cầu người dùng nhập tên
+        // Ask for username and room code
         string userName = AskForUserName();
         SendMessage(userName);
-
-        // Yêu cầu người dùng nhập mã phòng
-        roomCode = AskForRoomCode();
+        string roomCode = AskForRoomCode();
         SendMessage(roomCode);
 
-        // Tạo luồng để nhận tin nhắn từ server
-        Thread receiveThread = new Thread(ReceiveMessages);
+        // Thread to receive messages
+        Thread receiveThread = new Thread(ReceiveMessages); 
         receiveThread.Start();
 
-        // Gửi tin nhắn hoặc xử lý lệnh
+        // Input loop
         while (true)
         {
             string input = Console.ReadLine();
 
-            if (input.StartsWith("\\sendfile "))
+            if (input.StartsWith("\\sendfile ")) 
             {
-                // Gửi file
+                // Send file
                 string filePath = ExtractArgument(input.Substring(10).Trim());
                 SendFile(filePath);
             }
-            else if (input.StartsWith("\\getfile "))
+            else if (input.StartsWith("\\getfile ")) 
             {
-                // Tải file
+                // Request file from server
                 string fileName = ExtractArgument(input.Substring(9).Trim());
                 SendMessage($"GET_FILE|{fileName}");
             }
             else
             {
-                // Gửi tin nhắn thông thường
+                // Send regular messages
                 SendMessage(input);
             }
         }
-    }
-
-    private static string AskForUserName()
-    {
-        Console.Write("Enter your username: ");
-        return Console.ReadLine().Trim();
-    }
-
-    private static string AskForRoomCode()
-    {
-        Console.Write("Enter room code: ");
-        return Console.ReadLine().Trim();
     }
 
     private static void SendMessage(string message)
@@ -83,32 +84,19 @@ class Client
             Console.WriteLine($"Error sending message: {ex.Message}");
         }
     }
-
-    private static void SendMessage(string message, bool encrypt)
+    private static string AskForUserName()
     {
-        try
-        {
-            byte[] messageBytes;
-
-            if (encrypt)
-            {
-                // Mã hóa tin nhắn trước khi gửi
-                messageBytes = EncryptData(Encoding.UTF8.GetBytes(message), message.Length);
-            }
-            else
-            {
-                // Gửi tin nhắn thuần
-                messageBytes = Encoding.UTF8.GetBytes(message);
-            }
-
-            stream.Write(messageBytes, 0, messageBytes.Length);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error sending message: {ex.Message}");
-        }
+        Console.Write("Enter your username: ");
+        return Console.ReadLine().Trim();
     }
 
+    private static string AskForRoomCode()
+    {
+        Console.Write("Enter room code: ");
+        return Console.ReadLine().Trim();
+    }
+
+    
 
     private static void ReceiveMessages()
     {
@@ -120,17 +108,19 @@ class Client
                 int bytesRead = stream.Read(buffer, 0, buffer.Length);
                 if (bytesRead == 0) break;
 
+                // Đảm bảo sử dụng UTF-8 để giải mã
                 string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
 
                 if (message.StartsWith("SAVE_FILE"))
                 {
-                    // Xử lý khi nhận file từ server
+                    // Xử lý khi nhận file
                     string[] parts = message.Split('|');
                     string fileName = parts[1];
                     long fileSize = long.Parse(parts[2]);
 
                     Console.WriteLine($"Receiving file: {fileName}, Size: {fileSize / 1024} KB");
 
+                    // Tải file xuống
                     DownloadFile(fileName, fileSize);
                 }
                 else
@@ -145,6 +135,7 @@ class Client
             }
         }
     }
+
 
     private static void DownloadFile(string fileName, long fileSize)
     {
@@ -161,15 +152,16 @@ class Client
 
                 while (totalBytesRead < fileSize)
                 {
-                    int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                    int bytesRead = fileStream.Read(buffer, 0, buffer.Length);
                     if (bytesRead == 0) break;
 
-                    // Giải mã dữ liệu khi nhận
-                    byte[] decryptedBytes = DecryptData(buffer, bytesRead);
-                    fs.Write(decryptedBytes, 0, decryptedBytes.Length);
+                    fs.Write(buffer, 0, bytesRead);
                     totalBytesRead += bytesRead;
                     Console.WriteLine($"Downloading... {totalBytesRead}/{fileSize} bytes.");
                 }
+
+                fs.Flush();
+                fs.Close();
 
                 if (totalBytesRead == fileSize)
                 {
@@ -214,10 +206,10 @@ class Client
                 int bytesRead;
                 while ((bytesRead = fs.Read(buffer, 0, buffer.Length)) > 0)
                 {
-                    // Mã hóa dữ liệu trước khi gửi
-                    byte[] encryptedBytes = EncryptData(buffer, bytesRead);
-                    stream.Write(encryptedBytes, 0, encryptedBytes.Length);
+                    fileStream.Write(buffer, 0, bytesRead);
                 }
+                fs.Flush();
+                fs.Close();
             }
 
             Console.WriteLine($"File {fileName} sent successfully.");
@@ -231,51 +223,5 @@ class Client
     private static string ExtractArgument(string input)
     {
         return input.Trim('\'', '\"').Trim();
-    }
-
-    // Mã hóa dữ liệu trước khi gửi
-    private static byte[] EncryptData(byte[] data, int length)
-    {
-        return data;
-        //try
-        //{
-        //    byte[] keyBytes = Encoding.UTF8.GetBytes(roomCode); // Mã hóa dựa trên mã phòng
-        //    byte[] encryptedBytes = new byte[length];
-
-        //    for (int i = 0; i < length; i++)
-        //    {
-        //        encryptedBytes[i] = (byte)(data[i] ^ keyBytes[i % keyBytes.Length]); // XOR encryption
-        //    }
-
-        //    return encryptedBytes;
-        //}
-        //catch (Exception ex)
-        //{
-        //    Console.WriteLine($"Error encrypting data: {ex.Message}");
-        //    return null;
-        //}
-    }
-
-    // Giải mã dữ liệu khi nhận
-    private static byte[] DecryptData(byte[] data, int length)
-    {
-        return data;
-        //try
-        //{
-        //    byte[] keyBytes = Encoding.UTF8.GetBytes(roomCode); // Giải mã dựa trên mã phòng
-        //    byte[] decryptedBytes = new byte[length];
-
-        //    for (int i = 0; i < length; i++)
-        //    {
-        //        decryptedBytes[i] = (byte)(data[i] ^ keyBytes[i % keyBytes.Length]); // XOR decryption
-        //    }
-
-        //    return decryptedBytes;
-        //}
-        //catch (Exception ex)
-        //{
-        //    Console.WriteLine($"Error decrypting data: {ex.Message}");
-        //    return null;
-        //}
     }
 }

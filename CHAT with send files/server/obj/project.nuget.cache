@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dZb1shNjw/E=",
+  "dgSpecHash": "ToZj9pAUWT4=",
   "success": true,
-  "projectFilePath": "D:\\code\\ltm\\Doan\\NT106 Project\\CHAT with send files\\server\\server.csproj",
+  "projectFilePath": "C:\\Users\\Hunn\\AppData\\Local\\Temp\\MicrosoftEdgeDownloads\\0b86bbee-fd2d-40bb-9545-5937eb98527b\\Room\\CHAT\\server\\server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hunn\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\Hunn\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.0.0\\microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",
